@@ -3,3 +3,5 @@
 
 [![codecov](https://codecov.io/gh/try-react/ww/branch/master/graph/badge.svg)](https://codecov.io/gh/try-react/ww)
 - https://codecov.io/gh/try-react/ww
+
+note
