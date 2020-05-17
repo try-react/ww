@@ -1,6 +1,4 @@
-import { State } from "./state";
-import { Actions, actions } from "./action";
-import { reducer } from "./reducer";
+import { State, Actions, actions, reducer } from ".";
 import { label } from "~/domain/fizzBuzz";
 
 type TestData = { state: State; action: Actions; newState: State };
