@@ -8,7 +8,7 @@ export type State = {
 
 export const initState: State = {
   count: 0,
-  label: "",
+  label: fizzBuzz(0),
 };
 
 export const actions = {
@@ -25,7 +25,7 @@ export const reducer = createReducer<State, Actions>(initState)
   }))
   .handleAction(actions.countDown, (s, a) => ({
     count: s.count - a.payload,
-    label: fizzBuzz(s.count + a.payload),
+    label: fizzBuzz(s.count - a.payload),
   }))
   .handleAction(actions.countReset, () => ({
     ...initState,

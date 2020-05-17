@@ -1,4 +1,4 @@
-import { Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
+import { Count, FizzBuzzLabel, fizzBuzz } from "~/domain/fizzBuzz";
 
 export type State = {
   count: Count;
@@ -7,5 +7,5 @@ export type State = {
 
 export const initState: State = {
   count: 0,
-  label: "",
+  label: fizzBuzz(0),
 };

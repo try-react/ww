@@ -8,7 +8,7 @@ export const reducer: Reducer = (state, action) => {
   if (action.type === "countDown")
     return {
       count: state.count - adjust[action.type],
-      label: fizzBuzz(state.count + adjust[action.type]),
+      label: fizzBuzz(state.count - adjust[action.type]),
     };
   if (action.type === "countUp")
     return {
