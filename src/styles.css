@@ -1,0 +1,19 @@
+.fizz-buzz {
+    display: inline-flex;
+    padding: 30px;
+    margin: 20px;
+}
+
+.count-button {
+    background: #4676D7;
+    color: #fff;
+    margin: 10px;
+}
+
+.count-button:hover {
+    background: #1d49aa;
+}
+
+.fizz-buzz-label {
+    padding: 0 15px;
+}
