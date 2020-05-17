@@ -4,16 +4,16 @@ import { Actions } from "./action";
 
 type Reducer = (s: State, a: Actions) => State;
 
-export const reducer: Reducer = (state, action) => {
-  if (action.type === "countDown")
+export const reducer: Reducer = ({ count }, { type }) => {
+  if (type === "countDown")
     return {
-      count: state.count - adjust[action.type],
-      label: fizzBuzz(state.count - adjust[action.type]),
+      count: count - adjust[type],
+      label: fizzBuzz(count - adjust[type]),
     };
-  if (action.type === "countUp")
+  if (type === "countUp")
     return {
-      count: state.count + adjust[action.type],
-      label: fizzBuzz(state.count + adjust[action.type]),
+      count: count + adjust[type],
+      label: fizzBuzz(count + adjust[type]),
     };
   return { ...initState };
 };
