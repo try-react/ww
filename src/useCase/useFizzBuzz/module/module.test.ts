@@ -17,6 +17,13 @@ const testData: TestData[][] = [
       newState: { count: 0, label: label.nothing },
     },
   ],
+  [
+    {
+      state: { count: 1, label: label.nothing },
+      action: actions.countReset(),
+      newState: { count: 0, label: label.nothing },
+    },
+  ],
 ];
 
 it.each(testData)(
