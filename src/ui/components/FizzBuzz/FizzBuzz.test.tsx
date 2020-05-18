@@ -40,20 +40,20 @@ it("カウントアップをクリックして、実行されたか", () => {
   expect(spy).toHaveBeenCalledTimes(clickCnt);
 });
 
-it("カウントダウンをクリックして、実行されたか", () => {
-  const clickCnt = 3;
-  const spy = jest.spyOn(props.operations, "countDown");
-  const { downButton } = getTarget();
-  [...Array(clickCnt)].forEach(() => fireEvent.click(downButton));
+// it("カウントダウンをクリックして、実行されたか", () => {
+//   const clickCnt = 3;
+//   const spy = jest.spyOn(props.operations, "countDown");
+//   const { downButton } = getTarget();
+//   [...Array(clickCnt)].forEach(() => fireEvent.click(downButton));
 
-  expect(spy).toHaveBeenCalledTimes(clickCnt);
-});
+//   expect(spy).toHaveBeenCalledTimes(clickCnt);
+// });
 
-it("カウントリセットをクリックして、実行されたか", () => {
-  const clickCnt = 3;
-  const spy = jest.spyOn(props.operations, "countReset");
-  const { resetButton } = getTarget();
-  [...Array(clickCnt)].forEach(() => fireEvent.click(resetButton));
+// it("カウントリセットをクリックして、実行されたか", () => {
+//   const clickCnt = 3;
+//   const spy = jest.spyOn(props.operations, "countReset");
+//   const { resetButton } = getTarget();
+//   [...Array(clickCnt)].forEach(() => fireEvent.click(resetButton));
 
-  expect(spy).toHaveBeenCalledTimes(clickCnt);
-});
+//   expect(spy).toHaveBeenCalledTimes(clickCnt);
+// });

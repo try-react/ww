@@ -5,7 +5,7 @@ export const FizzBuzz: FC<Props> = (props) => (
   <div className="fizz-buzz">
     <button
       type="button"
-      onClick={props.operations.countUp(1)}
+      onClick={props.operations.countUp}
       className="count-button"
       data-testid="upButton"
     >
@@ -13,7 +13,7 @@ export const FizzBuzz: FC<Props> = (props) => (
     </button>
     <button
       type="button"
-      onClick={props.operations.countDown(1)}
+      onClick={props.operations.countDown}
       className="count-button"
       data-testid="downButton"
     >

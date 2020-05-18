@@ -3,14 +3,16 @@ import { reducer, initState, actions } from "./module";
 import { Props } from "~/useCase/useFizzBuzz";
 import { Count } from "~/domain/fizzBuzz";
 
+const count: Count = 1;
+
 export const useFizzBuzzTSA = (): Props => {
   const [state, dispatch] = useReducer(reducer, initState);
 
   return {
     ...state,
     operations: {
-      countUp: (v: Count) => () => dispatch(actions.countUp({ count: v })),
-      countDown: (v: Count) => () => dispatch(actions.countDown({ count: v })),
+      countUp: () => dispatch(actions.countUp({ count })),
+      countDown: () => dispatch(actions.countDown({ count })),
       countReset: () => dispatch(actions.countReset()),
     },
   };
