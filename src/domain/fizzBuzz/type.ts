@@ -9,3 +9,8 @@ export type FizzBuzzLabel = Fizz | Buzz | FizzBuzz | Nothing;
 export type FizzF = (p: Count) => Fizz | Nothing;
 export type BuzzF = (p: Count) => Buzz | Nothing;
 export type FizzBuzzF = (p: Count) => FizzBuzzLabel;
+
+export type FizzBuzzObjFactory = (p: {
+  count: Count;
+  inputValue: Count;
+}) => { count: Count; label: FizzBuzzLabel };

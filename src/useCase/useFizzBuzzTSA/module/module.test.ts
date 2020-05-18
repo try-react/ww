@@ -1,23 +1,16 @@
 import { reducer, actions, initState, State } from "./module";
-import { adjust } from "~/domain/fizzBuzz";
 
 it("countUp", () => {
   const newState: State = { count: 1, label: "" };
   expect(
-    reducer.handlers.countUp(
-      initState,
-      actions.countUp({ count: adjust.countUp })
-    )
+    reducer.handlers.countUp(initState, actions.countUp({ count: 1 }))
   ).toEqual(newState);
 });
 
 it("countDown", () => {
   const newState: State = { count: -1, label: "" };
   expect(
-    reducer.handlers.countDown(
-      initState,
-      actions.countDown({ count: adjust.countDown })
-    )
+    reducer.handlers.countDown(initState, actions.countDown({ count: 1 }))
   ).toEqual(newState);
 });
 

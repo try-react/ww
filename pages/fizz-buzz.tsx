@@ -6,7 +6,10 @@ import { useFizzBuzzTSA } from "~/useCase/useFizzBuzzTSA";
 
 const Component: NextPage = () => (
   <>
+    <h2>FIzzBuzz</h2>
     <FizzBuzz {...useFizzBuzz()} />
+    <hr />
+    <h2>FIzzBuzz (typesafe-actions版)</h2>
     <FizzBuzz {...useFizzBuzzTSA()} />
   </>
 );

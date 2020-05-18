@@ -1,19 +1,19 @@
 import { State, Actions, actions, reducer } from ".";
-import { label, adjust } from "~/domain/fizzBuzz";
+import { label } from "~/domain/fizzBuzz";
 
 type TestData = { state: State; action: Actions; newState: State };
 const testData: TestData[][] = [
   [
     {
       state: { count: 0, label: label.nothing },
-      action: actions.countUp({ count: adjust.countUp }),
+      action: actions.countUp({ count: 1 }),
       newState: { count: 1, label: label.nothing },
     },
   ],
   [
     {
       state: { count: 1, label: label.nothing },
-      action: actions.countDown({ count: adjust.countDown }),
+      action: actions.countDown({ count: 1 }),
       newState: { count: 0, label: label.nothing },
     },
   ],

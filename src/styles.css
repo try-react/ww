@@ -1,13 +1,13 @@
 .fizz-buzz {
     display: inline-flex;
-    padding: 30px;
-    margin: 20px;
+    padding: 10px;
 }
 
 .count-button {
     background: #4676D7;
     color: #fff;
     margin: 10px;
+    font-size: 1.05rem;
 }
 
 .count-button:hover {
