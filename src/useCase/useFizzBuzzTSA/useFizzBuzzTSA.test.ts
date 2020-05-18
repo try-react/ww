@@ -13,14 +13,14 @@ it("countUp", () => {
   const { result } = renderHook(useFizzBuzzTSA);
 
   act(result.current.operations.countUp);
-  expect(result.current.count).toEqual(10);
+  expect(result.current.count).toEqual(1);
 });
 
 it("countUp -> countDown", () => {
   const { result } = renderHook(useFizzBuzzTSA);
 
   act(result.current.operations.countUp);
-  expect(result.current.count).toEqual(10);
+  expect(result.current.count).toEqual(1);
 
   act(result.current.operations.countDown);
   expect(result.current.count).toEqual(0);
