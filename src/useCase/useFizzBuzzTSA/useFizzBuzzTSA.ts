@@ -6,8 +6,9 @@ import { adjustTSA } from "~/domain/fizzBuzz";
 export const useFizzBuzzTSA = (): Props => {
   const [state, dispatch] = useReducer(reducer, initState);
 
-  const countUp = () => dispatch(actions.countUp(adjustTSA.countUp));
-  const countDown = () => dispatch(actions.countDown(adjustTSA.countDown));
+  const countUp = () => dispatch(actions.countUp({ count: adjustTSA.countUp }));
+  const countDown = () =>
+    dispatch(actions.countDown({ count: adjustTSA.countDown }));
   const countReset = () => dispatch(actions.countReset());
 
   return {

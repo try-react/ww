@@ -1,4 +1,4 @@
-import { adjust, Count, FizzBuzzLabel, fizzBuzz } from "~/domain/fizzBuzz";
+import { Count, FizzBuzzLabel, fizzBuzz } from "~/domain/fizzBuzz";
 
 export type State = {
   count: Count;
@@ -11,8 +11,10 @@ export const initState: State = {
 } as const;
 
 export const actions = {
-  countUp: () => ({ type: "countUp" } as const),
-  countDown: () => ({ type: "countDown" } as const),
+  countUp: (payload: { count: Count }) =>
+    ({ type: "countUp", payload } as const),
+  countDown: (payload: { count: Count }) =>
+    ({ type: "countDown", payload } as const),
   countReset: () => ({ type: "countReset" } as const),
 } as const;
 export type Actions = ReturnType<typeof actions[keyof typeof actions]>;
@@ -21,15 +23,15 @@ type Reducer = (s: State, a: Actions) => State;
 export const reducer: Reducer = (state, action) => {
   if (action.type === "countUp") {
     return {
-      count: state.count + adjust[action.type],
-      label: fizzBuzz(state.count + adjust[action.type]),
+      count: state.count + action.payload.count,
+      label: fizzBuzz(state.count + action.payload.count),
     };
   }
 
   if (action.type === "countDown") {
     return {
-      count: state.count - adjust[action.type],
-      label: fizzBuzz(state.count - adjust[action.type]),
+      count: state.count - action.payload.count,
+      label: fizzBuzz(state.count - action.payload.count),
     };
   }
 
