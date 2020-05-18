@@ -19,13 +19,13 @@ export const actions = {
 type Actions = ActionType<typeof actions>;
 
 export const reducer = createReducer<State, Actions>(initState)
-  .handleAction(actions.countUp, ({ count }, { payload }) => ({
-    count: count + payload,
-    label: fizzBuzz(count + payload),
+  .handleAction(actions.countUp, (state, action) => ({
+    count: state.count + action.payload,
+    label: fizzBuzz(state.count + action.payload),
   }))
-  .handleAction(actions.countDown, ({ count }, { payload }) => ({
-    count: count - payload,
-    label: fizzBuzz(count - payload),
+  .handleAction(actions.countDown, (state, action) => ({
+    count: state.count - action.payload,
+    label: fizzBuzz(state.count - action.payload),
   }))
   .handleAction(actions.countReset, () => ({
     ...initState,

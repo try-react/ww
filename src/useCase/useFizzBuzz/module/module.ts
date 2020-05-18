@@ -18,18 +18,18 @@ export const actions = {
 export type Actions = ReturnType<typeof actions[keyof typeof actions]>;
 
 type Reducer = (s: State, a: Actions) => State;
-export const reducer: Reducer = ({ count }, { type }) => {
-  if (type === "countUp") {
+export const reducer: Reducer = (state, action) => {
+  if (action.type === "countUp") {
     return {
-      count: count + adjust[type],
-      label: fizzBuzz(count + adjust[type]),
+      count: state.count + adjust[action.type],
+      label: fizzBuzz(state.count + adjust[action.type]),
     };
   }
 
-  if (type === "countDown") {
+  if (action.type === "countDown") {
     return {
-      count: count - adjust[type],
-      label: fizzBuzz(count - adjust[type]),
+      count: state.count - adjust[action.type],
+      label: fizzBuzz(state.count - adjust[action.type]),
     };
   }
 
