@@ -1,9 +1,5 @@
-import {
-  Count,
-  FizzBuzzLabel,
-  fizzBuzz,
-  fizzBuzzObjFactory,
-} from "~/domain/fizzBuzz";
+import * as fizzBuzz from "~/domain/fizzBuzz";
+import { Count, FizzBuzzLabel, fizzBuzzObjFactory } from "~/domain/fizzBuzz";
 
 export type State = {
   count: Count;
@@ -12,7 +8,7 @@ export type State = {
 
 export const initState: State = {
   count: 0,
-  label: fizzBuzz(0),
+  label: fizzBuzz.createFizzBuzzLabel(0),
 } as const;
 
 export const actions = {

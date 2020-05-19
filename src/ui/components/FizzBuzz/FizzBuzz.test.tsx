@@ -6,6 +6,11 @@ import { Props } from "~/useCase/useFizzBuzz";
 const props: Props = {
   count: 0,
   label: "",
+  selectors: {
+    isFizzBuzz: false,
+    isInitCount: false,
+    isLowerLimit: false,
+  },
   operations: {
     countUp: jest.fn,
     countDown: jest.fn,

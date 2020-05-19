@@ -1,12 +1,13 @@
 import { renderHook, act } from "@testing-library/react-hooks";
 import { useFizzBuzz } from ".";
-import { label, num, Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
+import * as fizzBuzz from "~/domain/fizzBuzz";
+import { Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
 
 it("初期値", () => {
   const { result } = renderHook(useFizzBuzz);
 
   expect(result.current.count).toEqual(0);
-  expect(result.current.label).toEqual(label.nothing);
+  expect(result.current.label).toEqual(fizzBuzz.definedVO.label.nothing);
 });
 
 it("countUp", () => {
@@ -38,27 +39,27 @@ describe("countとlabelの検証", () => {
   const testData: TestData[][] = [
     [
       {
-        count: num.fizz,
-        expected: label.fizz,
+        count: fizzBuzz.definedVO.num.fizz,
+        expected: fizzBuzz.definedVO.label.fizz,
       },
     ],
     [
       {
-        count: num.buzz,
-        expected: label.buzz,
+        count: fizzBuzz.definedVO.num.buzz,
+        expected: fizzBuzz.definedVO.label.buzz,
       },
     ],
     [
       {
-        count: num.fizz * num.buzz,
-        expected: label.fizzBuzz,
+        count: fizzBuzz.definedVO.num.fizz * fizzBuzz.definedVO.num.buzz,
+        expected: fizzBuzz.definedVO.label.fizzBuzz,
       },
     ],
     [
       {
         // 0 = Nothing の前提
         count: 0,
-        expected: label.nothing,
+        expected: fizzBuzz.definedVO.label.nothing,
       },
     ],
   ];

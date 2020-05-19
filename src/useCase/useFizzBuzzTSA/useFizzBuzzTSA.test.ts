@@ -1,26 +1,26 @@
 import { renderHook, act } from "@testing-library/react-hooks";
 import { useFizzBuzzTSA } from ".";
-import { label } from "~/domain/fizzBuzz";
+import * as fizzBuzz from "~/domain/fizzBuzz";
 
 it("初期値", () => {
   const { result } = renderHook(useFizzBuzzTSA);
 
   expect(result.current.count).toEqual(0);
-  expect(result.current.label).toEqual(label.nothing);
+  expect(result.current.label).toEqual(fizzBuzz.definedVO.label.nothing);
 });
 
 it("countUp", () => {
   const { result } = renderHook(useFizzBuzzTSA);
 
   act(result.current.operations.countUp);
-  expect(result.current.count).toEqual;
+  expect(result.current.count).toEqual(fizzBuzz.definedVO.adjust);
 });
 
 it("countUp -> countDown", () => {
   const { result } = renderHook(useFizzBuzzTSA);
 
   act(result.current.operations.countUp);
-  expect(result.current.count).toEqual;
+  expect(result.current.count).toEqual(1);
 
   act(result.current.operations.countDown);
   expect(result.current.count).toEqual(0);

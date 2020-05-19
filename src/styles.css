@@ -1,17 +1,24 @@
 .fizz-buzz {
     display: inline-flex;
     padding: 10px;
+    margin: 10px;
+    height: 100px;
 }
 
 .count-button {
-    background: #4676D7;
+    background: green;
     color: #fff;
     margin: 10px;
     font-size: 1.05rem;
+    height: 50px;
 }
 
 .count-button:hover {
-    background: #1d49aa;
+    background: darkgreen;
+}
+
+.count-button:disabled {
+    background: grey;
 }
 
 .fizz-buzz-label {

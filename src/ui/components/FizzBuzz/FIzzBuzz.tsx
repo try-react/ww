@@ -16,16 +16,18 @@ export const FizzBuzz: FC<Props> = (props) => (
       onClick={props.operations.countDown}
       className="count-button"
       data-testid="downButton"
+      disabled={props.selectors.isLowerLimit}
     >
-      カウントダウン: {props.selectors.isNegative ? "❓" : "👎"}
+      カウントダウン: {props.selectors.isLowerLimit ? "❌" : "👎"}
     </button>
     <button
       type="button"
       onClick={props.operations.countReset}
       className="count-button"
       data-testid="resetButton"
+      disabled={props.selectors.isInitCount}
     >
-      カウントリセット: 🐙
+      カウントリセット: {props.selectors.isInitCount ? "❌" : "⭕️"}
     </button>
     <p className="fizz-buzz-label" data-testid="countLabel">
       カウント [<span>{props.count}</span>]
