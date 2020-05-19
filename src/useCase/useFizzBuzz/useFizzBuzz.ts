@@ -8,8 +8,8 @@ export const useFizzBuzz = () => {
   return {
     ...state,
     selectors: {
-      isLowerLimit: fizzBuzz.isLowerLimit(state.count),
-      isFizzBuzz: fizzBuzz.isFizzBuzz(state.label),
+      isLowerLimit: fizzBuzz.count.isLowerLimit(state.count),
+      isFizzBuzz: fizzBuzz.count.isFizzBuzz(state.label),
       isInitCount: state.count === initState.count,
     },
     operations: {

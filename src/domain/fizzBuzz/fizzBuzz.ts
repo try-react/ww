@@ -33,6 +33,9 @@ const reset: FizzBuzzObjFactory = (p) => ({
   label: createFizzBuzzLabel(p.inputValue),
 });
 
+const isLowerLimit = (p: Count) => p < 1;
+const isFizzBuzz = (p: FizzBuzzLabel) => p !== definedVO.label.nothing;
+
 export const createFizzBuzzLabel: FizzBuzzF = (p) =>
   (fizzF(p) + buzzF(p)) as FizzBuzzLabel;
 
@@ -42,5 +45,7 @@ export const fizzBuzzObjFactory = {
   reset,
 } as const;
 
-export const isLowerLimit = (p: Count) => p < 1;
-export const isFizzBuzz = (p: FizzBuzzLabel) => p !== definedVO.label.nothing;
+export const count = {
+  isLowerLimit,
+  isFizzBuzz,
+};

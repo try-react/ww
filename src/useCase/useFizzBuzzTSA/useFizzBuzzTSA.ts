@@ -9,13 +9,15 @@ export const useFizzBuzzTSA = (): Props => {
   return {
     ...state,
     selectors: {
-      isLowerLimit: fizzBuzz.isLowerLimit(state.count),
-      isFizzBuzz: fizzBuzz.isFizzBuzz(state.label),
+      isLowerLimit: fizzBuzz.count.isLowerLimit(state.count),
+      isFizzBuzz: fizzBuzz.count.isFizzBuzz(state.label),
       isInitCount: state.count === initState.count,
     },
     operations: {
-      countUp: () => dispatch(actions.countUp({ count: fizzBuzz.definedVO.adjust })),
-      countDown: () => dispatch(actions.countDown({ count: fizzBuzz.definedVO.adjust })),
+      countUp: () =>
+        dispatch(actions.countUp({ count: fizzBuzz.definedVO.adjust })),
+      countDown: () =>
+        dispatch(actions.countDown({ count: fizzBuzz.definedVO.adjust })),
       countReset: () => dispatch(actions.countReset()),
     },
   };

@@ -8,10 +8,10 @@
 
 ## テスト
 
-<div><img src="https://github.com/try-react/ww/blob/master/doc/a.jpg?raw=true" width=500></div>
-
 カバレッジは、コスパ無視で100%を目指す
-<div><img src="https://github.com/try-react/ww/blob/master/doc/b.jpg?raw=true" width=300></div>
+
+<div><img src="https://github.com/try-react/ww/blob/master/doc/a.jpg?raw=true" width=500></div>
+<div><img src="https://github.com/try-react/ww/blob/master/doc/b.jpg?raw=true" width=200></div>
 
 ## 構成
 
