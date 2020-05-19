@@ -10,6 +10,9 @@ export const useFizzBuzzTSA = (): Props => {
 
   return {
     ...state,
+    selectors: {
+      isNegative: state.count < 0,
+    },
     operations: {
       countUp: () => dispatch(actions.countUp({ count })),
       countDown: () => dispatch(actions.countDown({ count })),

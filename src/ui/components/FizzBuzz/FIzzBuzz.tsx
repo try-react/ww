@@ -17,7 +17,7 @@ export const FizzBuzz: FC<Props> = (props) => (
       className="count-button"
       data-testid="downButton"
     >
-      カウントダウン: 👎
+      カウントダウン: {props.selectors.isNegative ? "❓" : "👎"}
     </button>
     <button
       type="button"
