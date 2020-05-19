@@ -20,7 +20,7 @@ export const actions = {
 } as const;
 export type Actions = ReturnType<typeof actions[keyof typeof actions]>;
 
-type Reducer = (s: State, a: Actions) => State;
+export type Reducer = (s: State, a: Actions) => State;
 export const reducer: Reducer = (state, action) => {
   switch (action.type) {
     case "countUp":
@@ -37,9 +37,6 @@ export const reducer: Reducer = (state, action) => {
 
     case "countReset":
     default:
-      return fizzBuzzObjFactory.reset({
-        count: initState.count,
-        inputValue: initState.count,
-      });
+      return fizzBuzzObjFactory.reset();
   }
 };

@@ -1,4 +1,4 @@
-import { Fizz, Buzz, FizzBuzz, Nothing, Count } from "./type";
+import { Fizz, Buzz, FizzBuzz, Nothing, Adjust } from "./type";
 
 const fizz: Fizz = "Fizz";
 const buzz: Buzz = "Buzz";
@@ -7,7 +7,7 @@ const nothing: Nothing = "";
 
 const label = { fizz, buzz, nothing, fizzBuzz } as const;
 const num = { fizz: 3, buzz: 5 } as const;
-const adjust: Count = 1;
+const adjust: Adjust = 1;
 
 export const definedVO = {
   label,

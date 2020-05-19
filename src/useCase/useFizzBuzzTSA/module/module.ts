@@ -32,9 +32,4 @@ export const reducer = createReducer<State, Actions>(initState)
       inputValue: action.payload.count,
     })
   )
-  .handleAction(actions.countReset, () =>
-    fizzBuzzObjFactory.reset({
-      count: initState.count,
-      inputValue: initState.count,
-    })
-  );
+  .handleAction(actions.countReset, () => fizzBuzzObjFactory.reset());
