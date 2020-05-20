@@ -1,6 +1,7 @@
 import { reducer, actions } from "./module";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 
+// `actions`のテストも兼ねているので、`actions`のテストは無し
 describe("reducer", () => {
   type TestData = {
     p: Parameters<typeof reducer>;

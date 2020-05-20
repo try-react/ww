@@ -9,110 +9,110 @@ import {
 
 describe("createFizzBuzzLabel", () => {
   type TestData = {
-    count: Parameters<CreateFizzBuzzLabel>[0];
+    p: Parameters<CreateFizzBuzzLabel>;
     expected: ReturnType<CreateFizzBuzzLabel>;
   };
   const testData: TestData[][] = [
     [
       {
-        count: -1,
+        p: [-1],
         expected: definedVO.label.nothing,
       },
     ],
     [
       {
-        count: 0,
+        p: [0],
         expected: definedVO.label.nothing,
       },
     ],
     [
       {
-        count: 1,
+        p: [1],
         expected: definedVO.label.nothing,
       },
     ],
     [
       {
-        count: 2,
+        p: [2],
         expected: definedVO.label.nothing,
       },
     ],
     [
       {
-        count: 3,
+        p: [3],
         expected: definedVO.label.fizz,
       },
     ],
     [
       {
-        count: 4,
+        p: [4],
         expected: definedVO.label.nothing,
       },
     ],
     [
       {
-        count: 5,
+        p: [5],
         expected: definedVO.label.buzz,
       },
     ],
     [
       {
-        count: 6,
+        p: [6],
         expected: definedVO.label.fizz,
       },
     ],
     [
       {
-        count: 7,
+        p: [7],
         expected: definedVO.label.nothing,
       },
     ],
     [
       {
-        count: 8,
+        p: [8],
         expected: definedVO.label.nothing,
       },
     ],
     [
       {
-        count: 10,
+        p: [10],
         expected: definedVO.label.buzz,
       },
     ],
     [
       {
-        count: 15,
+        p: [15],
         expected: definedVO.label.fizzBuzz,
       },
     ],
     [
       {
-        count: 97,
+        p: [97],
         expected: definedVO.label.nothing,
       },
     ],
     [
       {
-        count: definedVO.num.fizz,
+        p: [definedVO.num.fizz],
         expected: definedVO.label.fizz,
       },
     ],
     [
       {
-        count: definedVO.num.buzz,
+        p: [definedVO.num.buzz],
         expected: definedVO.label.buzz,
       },
     ],
     [
       {
-        count: definedVO.num.fizz * definedVO.num.buzz,
+        p: [definedVO.num.fizz * definedVO.num.buzz],
         expected: definedVO.label.fizzBuzz,
       },
     ],
   ];
 
-  it.each(testData)("%o", ({ count, expected }) =>
-    expect(createFizzBuzzLabel(count)).toEqual(expected)
+  it.each(testData)("%o", ({ p, expected }) =>
+    expect(createFizzBuzzLabel(...p)).toEqual(expected)
   );
 });
 
