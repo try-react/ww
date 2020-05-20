@@ -79,7 +79,7 @@ it("カウントダウンをクリックして、実行されないか", () => {
   expect(spy).toHaveBeenCalledTimes(0);
 });
 
-it("カウントダウンをクリックして、実行されないか", () => {
+it("カウントリセットをクリックして、実行されないか", () => {
   const props: Props = {
     ...getProps(),
     selectors: {

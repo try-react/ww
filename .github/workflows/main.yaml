@@ -16,6 +16,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: setup
         run: yarn
+      - name: valid
+        run: yarn valid
       - name: test
         run: yarn jest --coverage
       - name: Upload coverage to Codecov

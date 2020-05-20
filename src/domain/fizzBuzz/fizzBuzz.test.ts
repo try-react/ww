@@ -310,7 +310,7 @@ describe("count", () => {
       ],
     ];
     it.each(testData)("%o", ({ p, expected }) => {
-      expect(count.isLowerLimit(p)).toEqual(expected);
+      expect(count.isLowerLimit(...p)).toEqual(expected);
     });
   });
   describe("isFizzBuzz", () => {
