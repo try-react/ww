@@ -1,3 +1,7 @@
+# FizzBuzz
+
+https://ja.wikipedia.org/wiki/Fizz_Buzz
+
 ## アウトプット
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6b27c592-08c9-4110-9f87-6b564787be0e/deploy-status)](https://app.netlify.com/sites/stoic-elion-b2fdb6/deploys)
@@ -9,22 +13,22 @@
 
 ## 構成
 
+### src/domain
+
+ロジックや型を集約しています。
+
 ### src/useCase
 
 [Ducks](https://github.com/erikras/ducks-modular-redux)や[Re-Ducks](https://github.com/alexnm/re-ducks)に近い構成ですが、下記の差があります。
-
-### 概要
 
 - `reducer`を、`export default`していません。`export const`にしています。
 - `action type`は、`prefix`は未使用です。(TSや利用範囲を考慮してです。)
 - `initState`を、保持しています。(初期化処理や、`State`の型を`Reducer`で使用するためです。)
 
-### 補足
-
 GlobalStateではないことや、TSを考慮してこのような構成です。
 LocalStateでは、このくらいのまとまりがよいです。
 
-### 参考
+#### 参考
 
 `Re-Ducks`に寄せると下記のようになります。
 
@@ -39,6 +43,10 @@ fizzBuzz/
 ├── types.ts
 ├── utils.ts
 ```
+### src/ui
+
+Reactの、Componentを配置しています。可能な限りstatelessにしてください。
+
 
 ## テスト
 
