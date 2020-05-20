@@ -6,12 +6,6 @@
 [![codecov](https://codecov.io/gh/try-react/ww/branch/master/graph/badge.svg)](https://codecov.io/gh/try-react/ww)
 - https://codecov.io/gh/try-react/ww
 
-## テスト
-
-カバレッジは、コスパ無視で100%を目指す
-
-<div><img src="https://github.com/try-react/ww/blob/master/doc/a.jpg?raw=true" width=500></div>
-<div><img src="https://github.com/try-react/ww/blob/master/doc/b.jpg?raw=true" width=200></div>
 
 ## 構成
 
@@ -45,3 +39,14 @@ fizzBuzz/
 ├── types.ts
 ├── utils.ts
 ```
+
+## テスト
+
+戸愚呂・弟「カバレッジは、100%を目指す」  
+
+<div><img src="https://github.com/try-react/ww/blob/master/doc/b.jpg?raw=true" width=200></div>
+
+必要以上にテストをしています。何が不要か見極めるために限界まで書いています。その結果、実際の仕事でどこを優先すべきか見えてきます。  
+[カバレッジ](https://codecov.io/gh/try-react/ww)はこちら。
+
+<div><img src="https://github.com/try-react/ww/blob/master/doc/a.jpg?raw=true" width=200></div>
