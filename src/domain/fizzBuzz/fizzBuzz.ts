@@ -56,9 +56,15 @@ const reset = (): ReturnType<FizzBuzzObjFactory> => ({
 const isLowerLimit = (p: Count) => p < 1;
 const isFizzBuzz = (p: FizzBuzzLabel) => p !== definedVO.label.nothing;
 
+/**
+ * FizzBuzzをテキストを作成
+ */
 export const createFizzBuzzLabel: CreateFizzBuzzLabel = (p) =>
   (fizzF(p) + buzzF(p)) as FizzBuzzLabel;
 
+/**
+ * `count`操作での使用を想定
+ */
 export const fizzBuzzObjFactory = {
   up,
   down,
@@ -66,6 +72,13 @@ export const fizzBuzzObjFactory = {
 } as const;
 
 export const count = {
+  /**
+   * `count`の下限を指定
+   */
   isLowerLimit,
+  /**
+   * Fizz or Buzz or FizzBuzz
+   * のどれか
+   */
   isFizzBuzz,
 };
