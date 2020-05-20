@@ -42,11 +42,11 @@ fizzBuzz/
 
 ## テスト
 
-戸愚呂・弟「カバレッジは、100%を目指す」  
-
-<div><img src="https://github.com/try-react/ww/blob/master/doc/b.jpg?raw=true" width=200></div>
+<div><img src="https://github.com/try-react/ww/blob/master/doc/a.jpg?raw=true" width=300></div>
 
 必要以上にテストをしています。何が不要か見極めるために限界まで書いています。その結果、実際の仕事でどこを優先すべきか見えてきます。  
 [カバレッジ](https://codecov.io/gh/try-react/ww)はこちら。
 
-<div><img src="https://github.com/try-react/ww/blob/master/doc/a.jpg?raw=true" width=200></div>
+戸愚呂・弟「カバレッジは、100%を目指す」  
+
+<div><img src="https://github.com/try-react/ww/blob/master/doc/b.jpg?raw=true" width=200></div>
