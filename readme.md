@@ -21,11 +21,11 @@
 
 ### 概要
 
-- `reducer`を、`export default`していません。通常の`export`にしています。
+- `reducer`を、`export default`していません。`export const`にしています。
 - `action type`は、`prefix`は未使用です。(TSや利用範囲を考慮してです。)
 - `initState`を、保持しています。(初期化処理や、`State`の型を`Reducer`で使用するためです。)
 
-### 詳細
+### 補足
 
 GlobalStateではないことや、TSを考慮してこのような構成です。
 LocalStateでは、このくらいのまとまりがよいです。
