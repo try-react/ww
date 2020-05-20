@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "valid": "yarn tsc --noEmit && yarn eslint --fix '{src,pages}/**/*.{ts,tsx}'"
+    "// -": "",
+    "valid:type": "yarn tsc --noEmit",
+    "valid:lint": "yarn eslint --fix '{src,pages}/**/*.{ts,tsx}'",
+    "valid:test": "yarn jest"
   },
   "dependencies": {
     "@cybozu/eslint-config": "10.0.3",
