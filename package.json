@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "export:code-dependency": "yarn code-dependency --source ./src --export-static ./docs --public-path https://try-react.github.io/ww",
     "// -": "",
     "valid:type": "yarn tsc --noEmit",
     "valid:lint": "yarn eslint --fix '{src,pages}/**/*.{ts,tsx}'",
