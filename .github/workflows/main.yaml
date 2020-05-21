@@ -28,7 +28,7 @@ jobs:
           token: ${{secrets.CODECOV_TOKEN}}
 
       - name: Xxx
-          run: |
+        run: |
           git checkout -b gh-pages master
           git subtree add --prefix docs origin gh-pages
           rm -rf docs
