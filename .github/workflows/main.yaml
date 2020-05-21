@@ -26,7 +26,6 @@ jobs:
         uses: codecov/codecov-action@v1.0.3
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-
       - name: Xxx
         run: |
           git checkout -b gh-pages master
