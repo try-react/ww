@@ -12,30 +12,30 @@ export const initState: State = {
 } as const;
 
 export const actions = {
-  countUp: (payload: { count: Count }) =>
-    ({ type: "countUp", payload } as const),
-  countDown: (payload: { count: Count }) =>
-    ({ type: "countDown", payload } as const),
-  countReset: () => ({ type: "countReset" } as const),
+  increment: (payload: { count: Count }) =>
+    ({ type: "increment", payload } as const),
+  decrement: (payload: { count: Count }) =>
+    ({ type: "decrement", payload } as const),
+  reset: () => ({ type: "reset" } as const),
 } as const;
 export type Actions = ReturnType<typeof actions[keyof typeof actions]>;
 
 export type Reducer = (s: State, a: Actions) => State;
 export const reducer: Reducer = (state, action) => {
   switch (action.type) {
-    case "countUp":
-      return fizzBuzzObjFactory.up({
+    case "increment":
+      return fizzBuzzObjFactory.increment({
         count: state.count,
         inputValue: action.payload.count,
       });
 
-    case "countDown":
-      return fizzBuzzObjFactory.down({
+    case "decrement":
+      return fizzBuzzObjFactory.decrement({
         count: state.count,
         inputValue: action.payload.count,
       });
 
-    case "countReset":
+    case "reset":
     default:
       return fizzBuzzObjFactory.reset();
   }

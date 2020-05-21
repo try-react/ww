@@ -13,23 +13,23 @@ export const initState: State = {
 } as const;
 
 export const actions = {
-  countUp: createAction("countUp")<{ count: Count }>(),
-  countDown: createAction("countDown")<{ count: Count }>(),
-  countReset: createAction("countReset")(),
+  increment: createAction("increment")<{ count: Count }>(),
+  decrement: createAction("decrement")<{ count: Count }>(),
+  reset: createAction("reset")(),
 } as const;
 type Actions = ActionType<typeof actions>;
 
 export const reducer = createReducer<State, Actions>(initState)
-  .handleAction(actions.countUp, (state, action) =>
-    fizzBuzzObjFactory.up({
+  .handleAction(actions.increment, (state, action) =>
+    fizzBuzzObjFactory.increment({
       count: state.count,
       inputValue: action.payload.count,
     })
   )
-  .handleAction(actions.countDown, (state, action) =>
-    fizzBuzzObjFactory.down({
+  .handleAction(actions.decrement, (state, action) =>
+    fizzBuzzObjFactory.decrement({
       count: state.count,
       inputValue: action.payload.count,
     })
   )
-  .handleAction(actions.countReset, () => fizzBuzzObjFactory.reset());
+  .handleAction(actions.reset, () => fizzBuzzObjFactory.reset());

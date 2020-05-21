@@ -120,7 +120,7 @@ describe("fizzBuzzObjFactory", () => {
   const inputValue = definedVO.adjust;
   const notValidInputValue = definedVO.adjust + 1;
 
-  describe("up", () => {
+  describe("increment", () => {
     type TestData = {
       p: Parameters<FizzBuzzObjFactory>;
       expected: ReturnType<FizzBuzzObjFactory>;
@@ -192,11 +192,11 @@ describe("fizzBuzzObjFactory", () => {
       ],
     ];
     it.each(testData)("%o", ({ p, expected }) => {
-      expect(fizzBuzzObjFactory.up(...p)).toEqual(expected);
+      expect(fizzBuzzObjFactory.increment(...p)).toEqual(expected);
     });
   });
 
-  describe("down", () => {
+  describe("decrement", () => {
     type TestData = {
       p: Parameters<FizzBuzzObjFactory>;
       expected: ReturnType<FizzBuzzObjFactory>;
@@ -268,7 +268,7 @@ describe("fizzBuzzObjFactory", () => {
       ],
     ];
     it.each(testData)("%o", ({ p, expected }) => {
-      expect(fizzBuzzObjFactory.down(...p)).toEqual(expected);
+      expect(fizzBuzzObjFactory.decrement(...p)).toEqual(expected);
     });
   });
 

@@ -12,9 +12,9 @@ describe("reducer", () => {
       {
         p: [
           { count: 0, label: "" },
-          actions.countUp({ count: fizzBuzz.definedVO.adjust }),
+          actions.increment({ count: fizzBuzz.definedVO.adjust }),
         ],
-        expected: fizzBuzz.fizzBuzzObjFactory.up({
+        expected: fizzBuzz.fizzBuzzObjFactory.increment({
           count: 0,
           inputValue: fizzBuzz.definedVO.adjust,
         }),
@@ -24,9 +24,9 @@ describe("reducer", () => {
       {
         p: [
           { count: 1, label: "" },
-          actions.countDown({ count: fizzBuzz.definedVO.adjust }),
+          actions.decrement({ count: fizzBuzz.definedVO.adjust }),
         ],
-        expected: fizzBuzz.fizzBuzzObjFactory.down({
+        expected: fizzBuzz.fizzBuzzObjFactory.decrement({
           count: 0,
           inputValue: fizzBuzz.definedVO.adjust,
         }),
@@ -34,7 +34,7 @@ describe("reducer", () => {
     ],
     [
       {
-        p: [{ count: 0, label: "" }, actions.countReset()],
+        p: [{ count: 0, label: "" }, actions.reset()],
         expected: fizzBuzz.fizzBuzzObjFactory.reset(),
       },
     ],

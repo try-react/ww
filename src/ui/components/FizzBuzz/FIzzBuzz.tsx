@@ -4,20 +4,23 @@ import { CountButton } from "../_common/Button/CountButton";
 
 export const FizzBuzz: FC<Props> = (props) => (
   <div className="fizz-buzz">
-    <CountButton onClick={props.operations.countUp} data-testid="upButton">
-      カウントアップ: 👍
-    </CountButton>
-
     <CountButton
-      onClick={props.operations.countDown}
-      disabled={props.selectors.isLowerLimit}
-      data-testid="downButton"
+      onClick={props.operations.increment}
+      data-testid="incrementButton"
     >
-      カウントダウン: 👎
+      増やす: 👍
     </CountButton>
 
     <CountButton
-      onClick={props.operations.countReset}
+      onClick={props.operations.decrement}
+      disabled={props.selectors.isLowerLimit}
+      data-testid="decrementButton"
+    >
+      減らす: 👎
+    </CountButton>
+
+    <CountButton
+      onClick={props.operations.reset}
       disabled={props.selectors.isInitCount}
       data-testid="resetButton"
     >

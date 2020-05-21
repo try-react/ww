@@ -13,11 +13,11 @@ export const useFizzBuzz = () => {
       isInitCount: state.count === initState.count,
     },
     operations: {
-      countUp: () =>
-        dispatch(actions.countUp({ count: fizzBuzz.definedVO.adjust })),
-      countDown: () =>
-        dispatch(actions.countDown({ count: fizzBuzz.definedVO.adjust })),
-      countReset: () => dispatch(actions.countReset()),
+      increment: () =>
+        dispatch(actions.increment({ count: fizzBuzz.definedVO.adjust })),
+      decrement: () =>
+        dispatch(actions.decrement({ count: fizzBuzz.definedVO.adjust })),
+      reset: () => dispatch(actions.reset()),
     },
   };
 };

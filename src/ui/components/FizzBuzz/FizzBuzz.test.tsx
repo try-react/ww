@@ -8,8 +8,8 @@ const getTarget = (props: Props) => {
 
   return {
     resetButton: getByTestId("resetButton"),
-    upButton: getByTestId("upButton"),
-    downButton: getByTestId("downButton"),
+    incrementButton: getByTestId("incrementButton"),
+    decrementButton: getByTestId("decrementButton"),
     countLabel: getByTestId("countLabel"),
     fizzBUzzLabel: getByTestId("fizzBUzzLabel"),
   };
@@ -24,30 +24,30 @@ const getProps = (): Props => ({
     isLowerLimit: false,
   },
   operations: {
-    countUp: jest.fn,
-    countDown: jest.fn,
-    countReset: jest.fn,
+    increment: jest.fn,
+    decrement: jest.fn,
+    reset: jest.fn,
   },
 });
 const clickCnt = 3;
 
 afterEach(cleanup);
 
-it("カウントアップをクリックして、実行されたか", () => {
+it("増やすをクリックして、実行されたか", () => {
   const props = getProps();
-  const spy = jest.spyOn(props.operations, "countUp");
-  const { upButton } = getTarget(props);
-  [...Array(clickCnt)].forEach(() => fireEvent.click(upButton));
+  const spy = jest.spyOn(props.operations, "increment");
+  const { incrementButton } = getTarget(props);
+  [...Array(clickCnt)].forEach(() => fireEvent.click(incrementButton));
 
   expect(spy).toHaveBeenCalledTimes(clickCnt);
 });
 
-it("カウントダウンをクリックして、実行されたか", () => {
+it("減らすをクリックして、実行されたか", () => {
   const props = getProps();
 
-  const spy = jest.spyOn(props.operations, "countDown");
-  const { downButton } = getTarget(props);
-  [...Array(clickCnt)].forEach(() => fireEvent.click(downButton));
+  const spy = jest.spyOn(props.operations, "decrement");
+  const { decrementButton } = getTarget(props);
+  [...Array(clickCnt)].forEach(() => fireEvent.click(decrementButton));
 
   expect(spy).toHaveBeenCalledTimes(clickCnt);
 });
@@ -55,14 +55,14 @@ it("カウントダウンをクリックして、実行されたか", () => {
 it("カウントリセットをクリックして、実行されたか", () => {
   const props = getProps();
 
-  const spy = jest.spyOn(props.operations, "countReset");
+  const spy = jest.spyOn(props.operations, "reset");
   const { resetButton } = getTarget(props);
   [...Array(clickCnt)].forEach(() => fireEvent.click(resetButton));
 
   expect(spy).toHaveBeenCalledTimes(clickCnt);
 });
 
-it("カウントダウンをクリックして、実行されないか", () => {
+it("減らすをクリックして、実行されないか", () => {
   const props: Props = {
     ...getProps(),
     selectors: {
@@ -72,9 +72,9 @@ it("カウントダウンをクリックして、実行されないか", () => {
     },
   };
 
-  const spy = jest.spyOn(props.operations, "countDown");
-  const { downButton } = getTarget(props);
-  [...Array(clickCnt)].forEach(() => fireEvent.click(downButton));
+  const spy = jest.spyOn(props.operations, "decrement");
+  const { decrementButton } = getTarget(props);
+  [...Array(clickCnt)].forEach(() => fireEvent.click(decrementButton));
 
   expect(spy).toHaveBeenCalledTimes(0);
 });
@@ -89,7 +89,7 @@ it("カウントリセットをクリックして、実行されないか", () =
     },
   };
 
-  const spy = jest.spyOn(props.operations, "countReset");
+  const spy = jest.spyOn(props.operations, "reset");
   const { resetButton } = getTarget(props);
   [...Array(clickCnt)].forEach(() => fireEvent.click(resetButton));
 

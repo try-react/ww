@@ -11,24 +11,24 @@ describe("useFizzBuzzTSA", () => {
   });
 
   describe("operations", () => {
-    it("countUp", () => {
+    it("increment", () => {
       const { result } = renderHook(useFizzBuzzTSA);
 
-      act(result.current.operations.countUp);
+      act(result.current.operations.increment);
       expect(result.current.count).toBeDefined();
       expect(result.current.label).toBeDefined();
     });
-    it("countDown", () => {
+    it("decrement", () => {
       const { result } = renderHook(useFizzBuzzTSA);
 
-      act(result.current.operations.countDown);
+      act(result.current.operations.decrement);
       expect(result.current.count).toBeDefined();
       expect(result.current.label).toBeDefined();
     });
-    it("countReset", () => {
+    it("reset", () => {
       const { result } = renderHook(useFizzBuzzTSA);
 
-      act(result.current.operations.countReset);
+      act(result.current.operations.reset);
       expect(result.current.count).toBeDefined();
       expect(result.current.label).toBeDefined();
     });

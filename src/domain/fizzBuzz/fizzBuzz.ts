@@ -20,7 +20,7 @@ const fizzF: FizzF = (p) =>
 const buzzF: BuzzF = (p) =>
   isBuzz(p) ? definedVO.label.buzz : definedVO.label.nothing;
 
-const up: FizzBuzzObjFactory = (p) => {
+const increment: FizzBuzzObjFactory = (p) => {
   if (p.count < 0) {
     return reset();
   }
@@ -35,7 +35,7 @@ const up: FizzBuzzObjFactory = (p) => {
   };
 };
 
-const down: FizzBuzzObjFactory = (p) => {
+const decrement: FizzBuzzObjFactory = (p) => {
   if (!isValidCount(p.count)) {
     return reset();
   }
@@ -66,8 +66,8 @@ export const createFizzBuzzLabel: CreateFizzBuzzLabel = (p) =>
  * `count`操作での使用を想定
  */
 export const fizzBuzzObjFactory = {
-  up,
-  down,
+  increment,
+  decrement,
   reset,
 } as const;
 
