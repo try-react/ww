@@ -18,19 +18,6 @@ LocalStateでは、このくらいのまとまりがよいです。
 ****
 #### 参考
 
-`Ducks`に寄せると下記のようになります。
-
-```bash
-actions
-└ fizzBuzz.ts
-
-reducers
-└ fizzBuzz.ts
-
-types
-└ fizzBuzz.ts
-```
-
 `Re-Ducks`に寄せると下記のようになります。
 
 ```bash
