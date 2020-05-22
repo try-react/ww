@@ -1,17 +1,17 @@
 import { useReducer } from "react";
-import { reducer, initState, actions } from "./module";
+import { reducer, initialState, actions } from "./module";
 import { Props } from "~/useCase/useFizzBuzz";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 
 export const useFizzBuzzTSA = (): Props => {
-  const [state, dispatch] = useReducer(reducer, initState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return {
     ...state,
     selectors: {
       isLowerLimit: fizzBuzz.count.isLowerLimit(state.count),
       isFizzBuzz: fizzBuzz.count.isFizzBuzz(state.label),
-      isInitCount: state.count === initState.count,
+      isInitCount: state.count === initialState.count,
     },
     operations: {
       increment: () =>

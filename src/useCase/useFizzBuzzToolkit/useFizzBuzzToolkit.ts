@@ -1,8 +1,9 @@
 import { useReducer } from "react";
 import { reducer, initialState, actions } from "./module";
+import { Props } from "~/useCase/useFizzBuzz";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 
-export const useFizzBuzz = () => {
+export const useFizzBuzzToolkit = (): Props => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return {
@@ -21,5 +22,3 @@ export const useFizzBuzz = () => {
     },
   };
 };
-
-export type Props = ReturnType<typeof useFizzBuzz>;

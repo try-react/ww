@@ -6,7 +6,7 @@ export type State = {
   label: FizzBuzzLabel;
 };
 
-export const initState: State = {
+export const initialState: State = {
   count: 0,
   label: fizzBuzz.createFizzBuzzLabel(0),
 } as const;
