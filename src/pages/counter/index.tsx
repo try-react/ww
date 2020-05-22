@@ -5,13 +5,13 @@ import Link from "next/link";
 const Component: NextPage = () => (
   <ul>
     <li>
-      <Link href="/fizz-buzz">
-        <a>fizz-buzz</a>
+      <Link href="counter/easy">
+        <a>easy</a>
       </Link>
     </li>
     <li>
-      <Link href="/counter">
-        <a>counter</a>
+      <Link href="counter/simple">
+        <a>simple</a>
       </Link>
     </li>
   </ul>
