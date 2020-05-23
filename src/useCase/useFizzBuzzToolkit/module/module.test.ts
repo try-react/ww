@@ -17,7 +17,7 @@ describe("actions", () => {
         },
       ],
     ];
-    it.each(testData)("パラメタを渡して結果の結果 %o", ({ p, expected }) => {
+    it.each(testData)("パラメタを渡した結果 %o", ({ p, expected }) => {
       expect(actions.increment(...p)).toEqual(expected);
     });
   });
@@ -34,7 +34,7 @@ describe("actions", () => {
         },
       ],
     ];
-    it.each(testData)("パラメタを渡して結果の結果 %o", ({ p, expected }) => {
+    it.each(testData)("パラメタを渡した結果 %o", ({ p, expected }) => {
       expect(actions.decrement(...p)).toEqual(expected);
     });
   });
@@ -51,7 +51,7 @@ describe("actions", () => {
         },
       ],
     ];
-    it.each(testData)("パラメタを渡して結果の結果 %o", ({ p, expected }) => {
+    it.each(testData)("パラメタを渡した結果 %o", ({ p, expected }) => {
       expect(actions.reset(...p)).toEqual(expected);
     });
   });
@@ -95,7 +95,7 @@ describe("reducer", () => {
     ],
   ];
 
-  it.each(testData)("パラメタを渡して結果の結果 %o", ({ p, expected }) => {
+  it.each(testData)("パラメタを渡した結果 %o", ({ p, expected }) => {
     expect(reducer(...p)).toEqual(expected);
   });
 });
