@@ -6,8 +6,10 @@ export const useFizzBuzz = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return {
-    ...state,
-    selectors: {
+    domain: {
+      ...state,
+    },
+    ui: {
       isLowerLimit: fizzBuzz.count.isLowerLimit(state.count),
       isFizzBuzz: fizzBuzz.count.isFizzBuzz(state.label),
       isInitCount: state.count === initialState.count,

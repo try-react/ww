@@ -16,9 +16,11 @@ const getTarget = (props: Props) => {
 };
 
 const getProps = (): Props => ({
-  count: 0,
-  label: "",
-  selectors: {
+  domain: {
+    count: 0,
+    label: "",
+  },
+  ui: {
     isFizzBuzz: false,
     isInitCount: false,
     isLowerLimit: false,
@@ -65,7 +67,7 @@ it("カウントリセットをクリックして、実行されたか", () => {
 it("減らすをクリックして、実行されないか", () => {
   const props: Props = {
     ...getProps(),
-    selectors: {
+    ui: {
       isFizzBuzz: true,
       isInitCount: true,
       isLowerLimit: true,
@@ -82,7 +84,7 @@ it("減らすをクリックして、実行されないか", () => {
 it("カウントリセットをクリックして、実行されないか", () => {
   const props: Props = {
     ...getProps(),
-    selectors: {
+    ui: {
       isFizzBuzz: true,
       isInitCount: true,
       isLowerLimit: true,

@@ -2,12 +2,12 @@ import { renderHook, act } from "@testing-library/react-hooks";
 import { useFizzBuzzTSA } from ".";
 
 describe("useFizzBuzzTSA", () => {
-  it("selectors", () => {
+  it("ui", () => {
     const { result } = renderHook(useFizzBuzzTSA);
 
-    expect(result.current.selectors.isLowerLimit).toBeDefined();
-    expect(result.current.selectors.isFizzBuzz).toBeDefined();
-    expect(result.current.selectors.isInitCount).toBeDefined();
+    expect(result.current.ui.isLowerLimit).toBeDefined();
+    expect(result.current.ui.isFizzBuzz).toBeDefined();
+    expect(result.current.ui.isInitCount).toBeDefined();
   });
 
   describe("operations", () => {
@@ -15,22 +15,22 @@ describe("useFizzBuzzTSA", () => {
       const { result } = renderHook(useFizzBuzzTSA);
 
       act(result.current.operations.increment);
-      expect(result.current.count).toBeDefined();
-      expect(result.current.label).toBeDefined();
+      expect(result.current.domain.count).toBeDefined();
+      expect(result.current.domain.label).toBeDefined();
     });
     it("decrement", () => {
       const { result } = renderHook(useFizzBuzzTSA);
 
       act(result.current.operations.decrement);
-      expect(result.current.count).toBeDefined();
-      expect(result.current.label).toBeDefined();
+      expect(result.current.domain.count).toBeDefined();
+      expect(result.current.domain.label).toBeDefined();
     });
     it("reset", () => {
       const { result } = renderHook(useFizzBuzzTSA);
 
       act(result.current.operations.reset);
-      expect(result.current.count).toBeDefined();
-      expect(result.current.label).toBeDefined();
+      expect(result.current.domain.count).toBeDefined();
+      expect(result.current.domain.label).toBeDefined();
     });
   });
 });

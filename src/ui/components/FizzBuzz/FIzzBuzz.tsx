@@ -13,7 +13,7 @@ export const FizzBuzz: FC<Props> = (props) => (
 
     <CountButton
       onClick={props.operations.decrement}
-      disabled={props.selectors.isLowerLimit}
+      disabled={props.ui.isLowerLimit}
       data-testid="decrementButton"
     >
       減らす: 👎
@@ -21,19 +21,19 @@ export const FizzBuzz: FC<Props> = (props) => (
 
     <CountButton
       onClick={props.operations.reset}
-      disabled={props.selectors.isInitCount}
+      disabled={props.ui.isInitCount}
       data-testid="resetButton"
     >
       カウントリセット: 🔰
     </CountButton>
 
     <p className="fizz-buzz-label" data-testid="countLabel">
-      カウント [<span>{props.count}</span>]
+      カウント [<span>{props.domain.count}</span>]
     </p>
     <p className="fizz-buzz-label" data-testid="fizzBUzzLabel">
       <span>
-        {props.label}
-        {props.selectors.isFizzBuzz && "😍"}
+        {props.domain.label}
+        {props.ui.isFizzBuzz && "😍"}
       </span>
     </p>
   </div>
