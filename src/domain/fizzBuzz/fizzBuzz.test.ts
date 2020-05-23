@@ -1,27 +1,30 @@
 import {
   createFizzBuzzLabel,
   definedVO,
-  CreateFizzBuzzLabel,
   fizzBuzzObjFactory,
   FizzBuzzObjFactory,
   count,
 } from ".";
 
 describe("createFizzBuzzLabel", () => {
-  type TestData = {
-    p: Parameters<CreateFizzBuzzLabel>;
-  };
-  const testData: TestData[][] = [
-    [
-      {
-        p: [0],
-      },
-    ],
-  ];
-
-  it.each(testData)("%o", ({ p }) =>
-    expect(createFizzBuzzLabel(...p)).toEqual(expect.anything())
-  );
+  it("空文字が、生成されるか", () => {
+    expect(createFizzBuzzLabel(-1)).toEqual(definedVO.label.nothing);
+  });
+  it("Fizzが、生成されるか", () => {
+    expect(createFizzBuzzLabel(definedVO.num.fizz)).toEqual(
+      definedVO.label.fizz
+    );
+  });
+  it("Buzzが、生成されるか", () => {
+    expect(createFizzBuzzLabel(definedVO.num.buzz)).toEqual(
+      definedVO.label.buzz
+    );
+  });
+  it("FizzBuzzが、生成されるか", () => {
+    expect(
+      createFizzBuzzLabel(definedVO.num.fizz * definedVO.num.buzz)
+    ).toEqual(definedVO.label.fizzBuzz);
+  });
 });
 
 describe("fizzBuzzObjFactory", () => {
@@ -100,7 +103,7 @@ describe("fizzBuzzObjFactory", () => {
         },
       ],
     ];
-    it.each(testData)("%o", ({ p, expected }) => {
+    it.each(testData)("No.%#  %o", ({ p, expected }) => {
       expect(fizzBuzzObjFactory.increment(...p)).toEqual(expected);
     });
   });
@@ -117,6 +120,17 @@ describe("fizzBuzzObjFactory", () => {
             {
               count: 0,
               inputValue: notValidInputValue,
+            },
+          ],
+          expected: fizzBuzzObjFactory.reset(),
+        },
+      ],
+      [
+        {
+          p: [
+            {
+              count: notValidCount,
+              inputValue,
             },
           ],
           expected: fizzBuzzObjFactory.reset(),
@@ -176,23 +190,14 @@ describe("fizzBuzzObjFactory", () => {
         },
       ],
     ];
-    it.each(testData)("%o", ({ p, expected }) => {
+    it.each(testData)("No.%#  %o", ({ p, expected }) => {
       expect(fizzBuzzObjFactory.decrement(...p)).toEqual(expected);
     });
   });
 
   describe("reset", () => {
-    type TestData = {
-      expected: ReturnType<FizzBuzzObjFactory>;
-    };
-    const testData: TestData[][] = [
-      [
-        {
-          expected: fizzBuzzObjFactory.reset(),
-        },
-      ],
-    ];
-    it.each(testData)("%o", ({ expected }) => {
+    it("resetされるか", () => {
+      const expected = fizzBuzzObjFactory.reset();
       expect(fizzBuzzObjFactory.reset()).toEqual(expected);
     });
   });
@@ -253,7 +258,7 @@ describe("count", () => {
         },
       ],
     ];
-    it.each(testData)("%o", ({ p, expected }) => {
+    it.each(testData)("No.%# %o", ({ p, expected }) => {
       expect(count.isFizzBuzz(...p)).toEqual(expected);
     });
   });

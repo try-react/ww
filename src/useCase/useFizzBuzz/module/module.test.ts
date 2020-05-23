@@ -2,57 +2,18 @@ import { actions, reducer } from ".";
 
 describe("actions", () => {
   const count = 10;
+  it("increment: objectが正しく生成されるか", () => {
+    const expected = { payload: { count }, type: "increment" };
+    expect(actions.increment({ count })).toEqual(expected);
+  });
+  it("decrement: objectが正しく生成されるか", () => {
+    const expected = { payload: { count }, type: "decrement" };
+    expect(actions.decrement({ count })).toEqual(expected);
+  });
 
-  describe("increment", () => {
-    type TestData = {
-      p: Parameters<typeof actions["increment"]>;
-      expected: ReturnType<typeof actions["increment"]>;
-    };
-    const testData: TestData[][] = [
-      [
-        {
-          p: [{ count }],
-          expected: { payload: { count }, type: "increment" },
-        },
-      ],
-    ];
-    it.each(testData)("パラメタを渡した結果 %o", ({ p, expected }) => {
-      expect(actions.increment(...p)).toEqual(expected);
-    });
-  });
-  describe("decrement", () => {
-    type TestData = {
-      p: Parameters<typeof actions["decrement"]>;
-      expected: ReturnType<typeof actions["decrement"]>;
-    };
-    const testData: TestData[][] = [
-      [
-        {
-          p: [{ count }],
-          expected: { payload: { count }, type: "decrement" },
-        },
-      ],
-    ];
-    it.each(testData)("パラメタを渡した結果 %o", ({ p, expected }) => {
-      expect(actions.decrement(...p)).toEqual(expected);
-    });
-  });
-  describe("reset", () => {
-    type TestData = {
-      p: Parameters<typeof actions["reset"]>;
-      expected: ReturnType<typeof actions["reset"]>;
-    };
-    const testData: TestData[][] = [
-      [
-        {
-          p: [],
-          expected: { payload: undefined, type: "reset" },
-        },
-      ],
-    ];
-    it.each(testData)("パラメタを渡した結果 %o", ({ p, expected }) => {
-      expect(actions.reset(...p)).toEqual(expected);
-    });
+  it("reset: objectが正しく生成されるか", () => {
+    const expected = { payload: undefined, type: "reset" };
+    expect(actions.reset()).toEqual(expected);
   });
 });
 
@@ -61,7 +22,7 @@ describe("reducer", () => {
     p: Parameters<typeof reducer>;
     expected: ReturnType<typeof reducer>;
   };
-  const dummy = { count: 0, label: "" } as const;
+  const dummy = { count: expect.anything(), label: expect.anything() } as const;
   const testData: TestData[][] = [
     [
       {
@@ -83,7 +44,8 @@ describe("reducer", () => {
     ],
   ];
 
-  it.each(testData)("パラメタを渡した結果 %o", ({ p, expected }) => {
-    expect(Object.keys(reducer(...p))).toEqual(Object.keys(expected));
+  it.each(testData)("新しくStateが生成されるか", ({ p, expected }) => {
+    expect(reducer(...p)).toEqual(expected);
+    expect(p).toEqual(p); // パラメタの汚染は、ないか？
   });
 });
