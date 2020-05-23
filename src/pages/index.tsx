@@ -9,11 +9,6 @@ const Component: NextPage = () => (
         <a>fizz-buzz</a>
       </Link>
     </li>
-    <li>
-      <Link href="/counter">
-        <a>counter</a>
-      </Link>
-    </li>
   </ul>
 );
 
