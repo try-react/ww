@@ -1,3 +1,5 @@
+import { ReadonlyDeep } from "type-fest";
+
 export type Count = number;
 export type Adjust = number;
 
@@ -11,7 +13,14 @@ export type CreateLabel = (p: Count) => FizzBuzzLabel;
 export type FizzF = (p: Count) => Fizz | Nothing;
 export type BuzzF = (p: Count) => Buzz | Nothing;
 
-export type Factory = (p: {
+type FactoryP = {
   count: Count;
   inputValue: Count;
-}) => { count: Count; label: FizzBuzzLabel };
+};
+
+type FactoryR = {
+  count: Count;
+  label: FizzBuzzLabel;
+};
+
+export type Factory = (p: ReadonlyDeep<FactoryP>) => FactoryR;

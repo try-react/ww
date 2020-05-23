@@ -1,11 +1,12 @@
+import { ReadonlyDeep } from "type-fest";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 import { Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
 import { createSlice, createAction } from "@reduxjs/toolkit";
 
-export type State = {
+export type State = ReadonlyDeep<{
   count: Count;
   label: FizzBuzzLabel;
-};
+}>;
 
 export const initialState: State = fizzBuzz.factory.reset();
 

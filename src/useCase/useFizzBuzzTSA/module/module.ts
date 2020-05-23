@@ -1,11 +1,12 @@
+import { ReadonlyDeep } from "type-fest";
 import { createAction, createReducer, ActionType } from "typesafe-actions";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 import { Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
 
-export type State = {
+export type State = ReadonlyDeep<{
   count: Count;
   label: FizzBuzzLabel;
-};
+}>;
 
 export const initialState: State = fizzBuzz.factory.reset();
 

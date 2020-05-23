@@ -7,5 +7,4 @@ const App: NextPage<any> = ({ Component, pageProps }) => (
     <Component {...pageProps} />
   </StrictMode>
 );
-
 export default App;

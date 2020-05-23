@@ -15,5 +15,4 @@ const Component: NextPage = () => (
     <FizzBuzz {...fizzBuzz.useToolkit()} />
   </>
 );
-
 export default Component;

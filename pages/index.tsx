@@ -11,5 +11,4 @@ const Component: NextPage = () => (
     </li>
   </ul>
 );
-
 export default Component;
