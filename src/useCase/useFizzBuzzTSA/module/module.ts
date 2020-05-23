@@ -7,10 +7,7 @@ export type State = {
   label: FizzBuzzLabel;
 };
 
-export const initialState: State = {
-  count: 0,
-  label: fizzBuzz.createLabel(0),
-} as const;
+export const initialState: State = fizzBuzz.factory.reset();
 
 export const actions = {
   increment: createAction("increment")<{ count: Count }>(),
@@ -32,4 +29,4 @@ export const reducer = createReducer<State, Actions>(initialState)
       inputValue: action.payload.count,
     })
   )
-  .handleAction(actions.reset, () => fizzBuzz.factory.reset());
+  .handleAction(actions.reset, fizzBuzz.factory.reset);

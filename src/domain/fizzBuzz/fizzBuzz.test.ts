@@ -1,28 +1,4 @@
-import {
-  createLabel,
-  definedVO,
-  factory,
-  Factory,
-  isFizzBuzz,
-  isLowerLimit,
-} from ".";
-
-describe("createLabel", () => {
-  it("空文字が、生成されるか", () => {
-    expect(createLabel(-1)).toEqual(definedVO.label.nothing);
-  });
-  it("Fizzが、生成されるか", () => {
-    expect(createLabel(definedVO.num.fizz)).toEqual(definedVO.label.fizz);
-  });
-  it("Buzzが、生成されるか", () => {
-    expect(createLabel(definedVO.num.buzz)).toEqual(definedVO.label.buzz);
-  });
-  it("FizzBuzzが、生成されるか", () => {
-    expect(createLabel(definedVO.num.fizz * definedVO.num.buzz)).toEqual(
-      definedVO.label.fizzBuzz
-    );
-  });
-});
+import { definedVO, factory, Factory, isFizzBuzz, isLowerLimit } from ".";
 
 describe("factory", () => {
   const inputValue = definedVO.adjust;

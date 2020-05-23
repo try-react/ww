@@ -6,10 +6,7 @@ export type State = {
   label: FizzBuzzLabel;
 };
 
-export const initialState: State = {
-  count: 0,
-  label: fizzBuzz.createLabel(0),
-} as const;
+export const initialState: State = fizzBuzz.factory.reset();
 
 export const actions = {
   increment: (payload: { count: Count }) =>

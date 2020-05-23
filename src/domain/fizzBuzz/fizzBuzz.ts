@@ -55,6 +55,8 @@ const reset = (): ReturnType<Factory> => ({
   label: createLabel(0),
 });
 
+const createLabel: CreateLabel = (p) => (fizzF(p) + buzzF(p)) as FizzBuzzLabel;
+
 /**
  * `count`の下限を指定
  */
@@ -67,13 +69,7 @@ export const isLowerLimit = (p: Count) => p === 0;
 export const isFizzBuzz = (p: FizzBuzzLabel) => p !== definedVO.label.nothing;
 
 /**
- * FizzBuzzをテキストを作成
- */
-export const createLabel: CreateLabel = (p) =>
-  (fizzF(p) + buzzF(p)) as FizzBuzzLabel;
-
-/**
- * 現在の値と入力値から、FizzBuzzを再計算
+ * 現在の値と入力値から、FizzBuzz用Objectを作成
  */
 export const factory = {
   increment,
