@@ -2,6 +2,12 @@ import { renderHook, act } from "@testing-library/react-hooks";
 import { useFizzBuzzToolkit } from ".";
 
 describe("useFizzBuzzToolkit", () => {
+  it("domain", () => {
+    const { result } = renderHook(useFizzBuzzToolkit);
+
+    expect(result.current.domain.count).toBeDefined();
+    expect(result.current.domain.label).toBeDefined();
+  });
   it("ui", () => {
     const { result } = renderHook(useFizzBuzzToolkit);
 
