@@ -46,7 +46,7 @@ describe("actions", () => {
       [
         {
           p: [],
-          expected: { payload: undefined, type: "reset" },
+          expected: { type: "reset" },
         },
       ],
     ];
