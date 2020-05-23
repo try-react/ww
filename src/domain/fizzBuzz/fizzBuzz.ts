@@ -9,7 +9,6 @@ import {
 } from "./type";
 import { definedVO } from "./definedVO";
 
-const isValidInputValue = (p: Adjust) => p === definedVO.adjust;
 const isFizz = (p: Count) => p > 0 && p % definedVO.num.fizz === 0;
 const isBuzz = (p: Count) => p > 0 && p % definedVO.num.buzz === 0;
 
@@ -19,8 +18,11 @@ const fizzF: FizzF = (p) =>
 const buzzF: BuzzF = (p) =>
   isBuzz(p) ? definedVO.label.buzz : definedVO.label.nothing;
 
+const isValidInputValue = (p: Adjust) => p === definedVO.adjust;
+const isValidCurrentCount = (p: Count) => p >= 0;
+
 const increment: Factory = (p) => {
-  if (p.count < 0) {
+  if (!isValidCurrentCount(p.count)) {
     return reset();
   }
 
@@ -35,7 +37,7 @@ const increment: Factory = (p) => {
 };
 
 const decrement: Factory = (p) => {
-  if (p.count < 0) {
+  if (!isValidCurrentCount(p.count)) {
     return reset();
   }
 
