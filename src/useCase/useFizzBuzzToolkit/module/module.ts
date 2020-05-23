@@ -1,5 +1,5 @@
 import * as fizzBuzz from "~/domain/fizzBuzz";
-import { Count, FizzBuzzLabel, fizzBuzzObjFactory } from "~/domain/fizzBuzz";
+import { Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
 import { createSlice, createAction } from "@reduxjs/toolkit";
 
 export type State = {
@@ -26,17 +26,17 @@ export const { reducer } = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(actions.increment, (state, action) =>
-      fizzBuzzObjFactory.increment({
+      fizzBuzz.factory.increment({
         count: state.count,
         inputValue: action.payload.count,
       })
     );
     builder.addCase(actions.decrement, (state, action) =>
-      fizzBuzzObjFactory.decrement({
+      fizzBuzz.factory.decrement({
         count: state.count,
         inputValue: action.payload.count,
       })
     );
-    builder.addCase(actions.reset, () => fizzBuzzObjFactory.reset());
+    builder.addCase(actions.reset, () => fizzBuzz.factory.reset());
   },
 });

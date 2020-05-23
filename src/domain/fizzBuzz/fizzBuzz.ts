@@ -3,7 +3,7 @@ import {
   BuzzF,
   CreateFizzBuzzLabel,
   Count,
-  FizzBuzzObjFactory,
+  Factory,
   FizzBuzzLabel,
   Adjust,
 } from "./type";
@@ -19,7 +19,7 @@ const fizzF: FizzF = (p) =>
 const buzzF: BuzzF = (p) =>
   isBuzz(p) ? definedVO.label.buzz : definedVO.label.nothing;
 
-const increment: FizzBuzzObjFactory = (p) => {
+const increment: Factory = (p) => {
   if (p.count < 0) {
     return reset();
   }
@@ -34,7 +34,7 @@ const increment: FizzBuzzObjFactory = (p) => {
   };
 };
 
-const decrement: FizzBuzzObjFactory = (p) => {
+const decrement: Factory = (p) => {
   if (p.count < 0) {
     return reset();
   }
@@ -48,7 +48,7 @@ const decrement: FizzBuzzObjFactory = (p) => {
   };
 };
 
-const reset = (): ReturnType<FizzBuzzObjFactory> => ({
+const reset = (): ReturnType<Factory> => ({
   count: 0,
   label: createFizzBuzzLabel(0),
 });
@@ -63,9 +63,9 @@ export const createFizzBuzzLabel: CreateFizzBuzzLabel = (p) =>
   (fizzF(p) + buzzF(p)) as FizzBuzzLabel;
 
 /**
- * `count`操作での使用を想定
+ * 現在の値と入力値から、FizzBuzzを再計算
  */
-export const fizzBuzzObjFactory = {
+export const factory = {
   increment,
   decrement,
   reset,

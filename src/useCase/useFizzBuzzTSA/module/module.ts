@@ -1,6 +1,6 @@
 import { createAction, createReducer, ActionType } from "typesafe-actions";
 import * as fizzBuzz from "~/domain/fizzBuzz";
-import { Count, FizzBuzzLabel, fizzBuzzObjFactory } from "~/domain/fizzBuzz";
+import { Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
 
 export type State = {
   count: Count;
@@ -21,15 +21,15 @@ type Actions = ActionType<typeof actions>;
 
 export const reducer = createReducer<State, Actions>(initialState)
   .handleAction(actions.increment, (state, action) =>
-    fizzBuzzObjFactory.increment({
+    fizzBuzz.factory.increment({
       count: state.count,
       inputValue: action.payload.count,
     })
   )
   .handleAction(actions.decrement, (state, action) =>
-    fizzBuzzObjFactory.decrement({
+    fizzBuzz.factory.decrement({
       count: state.count,
       inputValue: action.payload.count,
     })
   )
-  .handleAction(actions.reset, () => fizzBuzzObjFactory.reset());
+  .handleAction(actions.reset, () => fizzBuzz.factory.reset());

@@ -1,5 +1,5 @@
 import * as fizzBuzz from "~/domain/fizzBuzz";
-import { Count, FizzBuzzLabel, fizzBuzzObjFactory } from "~/domain/fizzBuzz";
+import { Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
 
 export type State = {
   count: Count;
@@ -24,19 +24,19 @@ export type Reducer = (s: State, a: Actions) => State;
 export const reducer: Reducer = (state, action) => {
   switch (action.type) {
     case "increment":
-      return fizzBuzzObjFactory.increment({
+      return fizzBuzz.factory.increment({
         count: state.count,
         inputValue: action.payload.count,
       });
 
     case "decrement":
-      return fizzBuzzObjFactory.decrement({
+      return fizzBuzz.factory.decrement({
         count: state.count,
         inputValue: action.payload.count,
       });
 
     case "reset":
     default:
-      return fizzBuzzObjFactory.reset();
+      return fizzBuzz.factory.reset();
   }
 };

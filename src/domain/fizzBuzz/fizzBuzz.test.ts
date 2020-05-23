@@ -1,7 +1,7 @@
 import {
   createFizzBuzzLabel,
   definedVO,
-  fizzBuzzObjFactory,
+  factory,
   FizzBuzzObjFactory,
   count,
 } from ".";
@@ -27,7 +27,7 @@ describe("createFizzBuzzLabel", () => {
   });
 });
 
-describe("fizzBuzzObjFactory", () => {
+describe("factory", () => {
   const inputValue = definedVO.adjust;
   const notValidInputValue = definedVO.adjust + 100;
   const notValidCount = -100;
@@ -46,7 +46,7 @@ describe("fizzBuzzObjFactory", () => {
               inputValue: notValidInputValue,
             },
           ],
-          expected: fizzBuzzObjFactory.reset(),
+          expected: factory.reset(),
         },
       ],
       [
@@ -57,7 +57,7 @@ describe("fizzBuzzObjFactory", () => {
               inputValue,
             },
           ],
-          expected: fizzBuzzObjFactory.reset(),
+          expected: factory.reset(),
         },
       ],
       [
@@ -104,7 +104,7 @@ describe("fizzBuzzObjFactory", () => {
       ],
     ];
     it.each(testData)("No.%#  %o", ({ p, expected }) => {
-      expect(fizzBuzzObjFactory.increment(...p)).toEqual(expected);
+      expect(factory.increment(...p)).toEqual(expected);
     });
   });
 
@@ -122,7 +122,7 @@ describe("fizzBuzzObjFactory", () => {
               inputValue: notValidInputValue,
             },
           ],
-          expected: fizzBuzzObjFactory.reset(),
+          expected: factory.reset(),
         },
       ],
       [
@@ -133,7 +133,7 @@ describe("fizzBuzzObjFactory", () => {
               inputValue,
             },
           ],
-          expected: fizzBuzzObjFactory.reset(),
+          expected: factory.reset(),
         },
       ],
       [
@@ -144,7 +144,7 @@ describe("fizzBuzzObjFactory", () => {
               inputValue: notValidInputValue,
             },
           ],
-          expected: fizzBuzzObjFactory.reset(),
+          expected: factory.reset(),
         },
       ],
       [
@@ -191,14 +191,14 @@ describe("fizzBuzzObjFactory", () => {
       ],
     ];
     it.each(testData)("No.%#  %o", ({ p, expected }) => {
-      expect(fizzBuzzObjFactory.decrement(...p)).toEqual(expected);
+      expect(factory.decrement(...p)).toEqual(expected);
     });
   });
 
   describe("reset", () => {
     it("resetされるか", () => {
-      const expected = fizzBuzzObjFactory.reset();
-      expect(fizzBuzzObjFactory.reset()).toEqual(expected);
+      const expected = factory.reset();
+      expect(factory.reset()).toEqual(expected);
     });
   });
 });
