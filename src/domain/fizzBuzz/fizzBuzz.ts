@@ -9,10 +9,9 @@ import {
 } from "./type";
 import { definedVO } from "./definedVO";
 
-const isValidCount = (p: Count) => p > 0;
 const isValidInputValue = (p: Adjust) => p === definedVO.adjust;
-const isFizz = (p: Count) => isValidCount(p) && p % definedVO.num.fizz === 0;
-const isBuzz = (p: Count) => isValidCount(p) && p % definedVO.num.buzz === 0;
+const isFizz = (p: Count) => p > 0 && p % definedVO.num.fizz === 0;
+const isBuzz = (p: Count) => p > 0 && p % definedVO.num.buzz === 0;
 
 const fizzF: FizzF = (p) =>
   isFizz(p) ? definedVO.label.fizz : definedVO.label.nothing;
@@ -36,9 +35,10 @@ const increment: FizzBuzzObjFactory = (p) => {
 };
 
 const decrement: FizzBuzzObjFactory = (p) => {
-  if (!isValidCount(p.count)) {
+  if (p.count < 0) {
     return reset();
   }
+
   if (!isValidInputValue(p.inputValue)) {
     return reset();
   }

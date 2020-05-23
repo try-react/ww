@@ -1,5 +1,4 @@
-import { actions, reducer, Reducer } from ".";
-import * as fizzBuzz from "~/domain/fizzBuzz";
+import { actions, reducer } from ".";
 
 describe("actions", () => {
   const count = 10;
@@ -59,43 +58,32 @@ describe("actions", () => {
 
 describe("reducer", () => {
   type TestData = {
-    p: Parameters<Reducer>;
-    expected: ReturnType<Reducer>;
+    p: Parameters<typeof reducer>;
+    expected: ReturnType<typeof reducer>;
   };
+  const dummy = { count: 0, label: "" } as const;
   const testData: TestData[][] = [
     [
       {
-        p: [
-          { count: 0, label: "" },
-          actions.increment({ count: fizzBuzz.definedVO.adjust }),
-        ],
-        expected: fizzBuzz.fizzBuzzObjFactory.increment({
-          count: 0,
-          inputValue: fizzBuzz.definedVO.adjust,
-        }),
+        p: [{ count: 0, label: "" }, actions.increment({ count: 1 })],
+        expected: dummy,
       },
     ],
     [
       {
-        p: [
-          { count: 1, label: "" },
-          actions.decrement({ count: fizzBuzz.definedVO.adjust }),
-        ],
-        expected: fizzBuzz.fizzBuzzObjFactory.decrement({
-          count: 0,
-          inputValue: fizzBuzz.definedVO.adjust,
-        }),
+        p: [{ count: 1, label: "" }, actions.decrement({ count: 1 })],
+        expected: dummy,
       },
     ],
     [
       {
-        p: [{ count: 0, label: "" }, actions.reset()],
-        expected: fizzBuzz.fizzBuzzObjFactory.reset(),
+        p: [{ count: 1, label: "" }, actions.reset()],
+        expected: dummy,
       },
     ],
   ];
 
   it.each(testData)("パラメタを渡した結果 %o", ({ p, expected }) => {
-    expect(reducer(...p)).toEqual(expected);
+    expect(Object.keys(reducer(...p))).toEqual(Object.keys(expected));
   });
 });
