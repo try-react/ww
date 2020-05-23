@@ -8,7 +8,7 @@ export type State = {
 
 export const initialState: State = {
   count: 0,
-  label: fizzBuzz.createFizzBuzzLabel(0),
+  label: fizzBuzz.createLabel(0),
 } as const;
 
 export const actions = {

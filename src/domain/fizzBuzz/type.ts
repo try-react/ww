@@ -8,7 +8,7 @@ export type FizzBuzzLabel = Fizz | Buzz | FizzBuzz | Nothing;
 
 export type FizzF = (p: Count) => Fizz | Nothing;
 export type BuzzF = (p: Count) => Buzz | Nothing;
-export type CreateFizzBuzzLabel = (p: Count) => FizzBuzzLabel;
+export type CreateLabel = (p: Count) => FizzBuzzLabel;
 
 export type Factory = (p: {
   count: Count;

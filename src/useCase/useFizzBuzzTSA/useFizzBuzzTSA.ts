@@ -11,8 +11,8 @@ export const useFizzBuzzTSA = (): Props => {
       ...state,
     },
     ui: {
-      isLowerLimit: fizzBuzz.count.isLowerLimit(state.count),
-      isFizzBuzz: fizzBuzz.count.isFizzBuzz(state.label),
+      isLowerLimit: fizzBuzz.isLowerLimit(state.count),
+      isFizzBuzz: fizzBuzz.isFizzBuzz(state.label),
       isInitCount: state.count === initialState.count,
     },
     operations: {

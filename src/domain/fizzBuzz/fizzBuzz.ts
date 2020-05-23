@@ -1,7 +1,7 @@
 import {
   FizzF,
   BuzzF,
-  CreateFizzBuzzLabel,
+  CreateLabel,
   Count,
   Factory,
   FizzBuzzLabel,
@@ -30,7 +30,7 @@ const increment: Factory = (p) => {
 
   return {
     count: p.count + p.inputValue,
-    label: createFizzBuzzLabel(p.count + p.inputValue),
+    label: createLabel(p.count + p.inputValue),
   };
 };
 
@@ -44,22 +44,30 @@ const decrement: Factory = (p) => {
   }
   return {
     count: p.count - p.inputValue,
-    label: createFizzBuzzLabel(p.count - p.inputValue),
+    label: createLabel(p.count - p.inputValue),
   };
 };
 
 const reset = (): ReturnType<Factory> => ({
   count: 0,
-  label: createFizzBuzzLabel(0),
+  label: createLabel(0),
 });
 
-const isLowerLimit = (p: Count) => p < 1;
-const isFizzBuzz = (p: FizzBuzzLabel) => p !== definedVO.label.nothing;
+/**
+ * `count`の下限を指定
+ */
+export const isLowerLimit = (p: Count) => p < 1;
+
+/**
+ * Fizz or Buzz or FizzBuzz
+ * のどれか
+ */
+export const isFizzBuzz = (p: FizzBuzzLabel) => p !== definedVO.label.nothing;
 
 /**
  * FizzBuzzをテキストを作成
  */
-export const createFizzBuzzLabel: CreateFizzBuzzLabel = (p) =>
+export const createLabel: CreateLabel = (p) =>
   (fizzF(p) + buzzF(p)) as FizzBuzzLabel;
 
 /**
@@ -70,15 +78,3 @@ export const factory = {
   decrement,
   reset,
 } as const;
-
-export const count = {
-  /**
-   * `count`の下限を指定
-   */
-  isLowerLimit,
-  /**
-   * Fizz or Buzz or FizzBuzz
-   * のどれか
-   */
-  isFizzBuzz,
-};
