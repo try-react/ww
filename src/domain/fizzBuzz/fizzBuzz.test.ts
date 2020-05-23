@@ -107,8 +107,8 @@ describe("factory", () => {
 
   describe("decrement", () => {
     type TestData = {
-      p: Parameters<FizzBuzzObjFactory>;
-      expected: ReturnType<FizzBuzzObjFactory>;
+      p: Parameters<Factory>;
+      expected: ReturnType<Factory>;
     };
     const testData: TestData[][] = [
       [
