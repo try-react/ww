@@ -16,7 +16,7 @@ export const actions = {
     ({ type: "increment", payload } as const),
   decrement: (payload: { count: Count }) =>
     ({ type: "decrement", payload } as const),
-  reset: () => ({ type: "reset" } as const),
+  reset: () => ({ payload: undefined, type: "reset" } as const),
 } as const;
 export type Actions = ReturnType<typeof actions[keyof typeof actions]>;
 

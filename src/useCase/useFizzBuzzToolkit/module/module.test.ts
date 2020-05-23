@@ -1,7 +1,62 @@
-import { reducer, actions } from "./module";
+import { actions, reducer } from ".";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 
-// `actions`のテストも兼ねているので、`actions`のテストは無し
+describe("actions", () => {
+  const count = 10;
+
+  describe("increment", () => {
+    type TestData = {
+      p: Parameters<typeof actions["increment"]>;
+      expected: ReturnType<typeof actions["increment"]>;
+    };
+    const testData: TestData[][] = [
+      [
+        {
+          p: [{ count }],
+          expected: { payload: { count }, type: "increment" },
+        },
+      ],
+    ];
+    it.each(testData)("パラメタを渡して結果の結果 %o", ({ p, expected }) => {
+      expect(actions.increment(...p)).toEqual(expected);
+    });
+  });
+  describe("decrement", () => {
+    type TestData = {
+      p: Parameters<typeof actions["decrement"]>;
+      expected: ReturnType<typeof actions["decrement"]>;
+    };
+    const testData: TestData[][] = [
+      [
+        {
+          p: [{ count }],
+          expected: { payload: { count }, type: "decrement" },
+        },
+      ],
+    ];
+    it.each(testData)("パラメタを渡して結果の結果 %o", ({ p, expected }) => {
+      expect(actions.decrement(...p)).toEqual(expected);
+    });
+  });
+  describe("reset", () => {
+    type TestData = {
+      p: Parameters<typeof actions["reset"]>;
+      expected: ReturnType<typeof actions["reset"]>;
+    };
+    const testData: TestData[][] = [
+      [
+        {
+          p: [],
+          expected: { payload: undefined, type: "reset" },
+        },
+      ],
+    ];
+    it.each(testData)("パラメタを渡して結果の結果 %o", ({ p, expected }) => {
+      expect(actions.reset(...p)).toEqual(expected);
+    });
+  });
+});
+
 describe("reducer", () => {
   type TestData = {
     p: Parameters<typeof reducer>;
@@ -40,7 +95,7 @@ describe("reducer", () => {
     ],
   ];
 
-  it.each(testData)("パラメタを渡して結果の県境 %o", ({ p, expected }) => {
+  it.each(testData)("パラメタを渡して結果の結果 %o", ({ p, expected }) => {
     expect(reducer(...p)).toEqual(expected);
   });
 });
