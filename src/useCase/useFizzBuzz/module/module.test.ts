@@ -46,6 +46,5 @@ describe("reducer", () => {
 
   it.each(testData)("新しくStateが生成されるか", ({ p, expected }) => {
     expect(reducer(...p)).toEqual(expected);
-    expect(p).toEqual(p); // パラメタの汚染は、ないか？
   });
 });
