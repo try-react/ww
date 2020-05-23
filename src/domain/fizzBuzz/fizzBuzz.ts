@@ -58,7 +58,7 @@ const reset = (): ReturnType<Factory> => ({
 /**
  * `count`の下限を指定
  */
-export const isLowerLimit = (p: Count) => p < 1;
+export const isLowerLimit = (p: Count) => p === 0;
 
 /**
  * Fizz or Buzz or FizzBuzz
