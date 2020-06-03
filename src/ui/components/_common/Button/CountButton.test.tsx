@@ -2,7 +2,9 @@ import React from "react";
 import { CountButton } from ".";
 import renderer from "react-test-renderer";
 
-it("Snapshot", () => {
-  const tree = renderer.create(<CountButton>テスト</CountButton>).toJSON();
-  expect(tree).toMatchSnapshot();
+describe("Snapshot", () => {
+  it("初期状態", () => {
+    const tree = renderer.create(<CountButton>テスト</CountButton>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
