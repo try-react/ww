@@ -3,7 +3,7 @@ import { reducer, initialState, actions } from "./module";
 import { Props } from "~/useCase/useFizzBuzz";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 import { usePrevious } from "react-use";
-import { useCountEffect } from "~/store/fizzBuzz/useFizzBuzz";
+import { useCountEffect } from "~/store/fizzBuzz/hooks";
 import type { State } from "./module";
 
 export const useFizzBuzzToolkit = (

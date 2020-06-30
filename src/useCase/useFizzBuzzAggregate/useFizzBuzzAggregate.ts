@@ -1,4 +1,4 @@
-import { useSelectors } from "~/store/fizzBuzz/useFizzBuzz";
+import { useSelectors } from "~/store/fizzBuzz/hooks";
 
 export const useFizzBuzzAggregate = () => {
   const { selectors, ui } = useSelectors();

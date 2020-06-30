@@ -2,7 +2,7 @@ import { useReducer } from "react";
 import { reducer, initialState, actions } from "./module";
 import type { State } from "./module";
 import * as fizzBuzz from "~/domain/fizzBuzz";
-import { useCountEffect } from "~/store/fizzBuzz/useFizzBuzz";
+import { useCountEffect } from "~/store/fizzBuzz/hooks";
 import { usePrevious } from "react-use";
 
 export type Props = ReturnType<typeof useFizzBuzz>;

@@ -4,7 +4,7 @@ import { Props } from "~/useCase/useFizzBuzz";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 import { usePrevious } from "react-use";
 import type { State } from "./module";
-import { useCountEffect } from "~/store/fizzBuzz/useFizzBuzz";
+import { useCountEffect } from "~/store/fizzBuzz/hooks";
 
 export const useFizzBuzzTSA = (
   effect = {
