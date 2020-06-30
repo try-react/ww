@@ -55,7 +55,8 @@ const reset = (): ReturnType<Factory> => ({
   label: createLabel(0),
 });
 
-const createLabel: CreateLabel = (p) => (fizzF(p) + buzzF(p)) as FizzBuzzLabel;
+export const createLabel: CreateLabel = (p) =>
+  (fizzF(p) + buzzF(p)) as FizzBuzzLabel;
 
 /**
  * `count`の下限を指定

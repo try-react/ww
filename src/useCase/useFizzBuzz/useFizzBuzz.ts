@@ -1,9 +1,17 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 import { reducer, initialState, actions } from "./module";
+import type { State } from "./module";
 import * as fizzBuzz from "~/domain/fizzBuzz";
+import { useOperations } from "~/store/fizzBuzz/useFizzBuzz";
 
-export const useFizzBuzz = () => {
+export type Props = ReturnType<typeof useFizzBuzz>;
+export const useFizzBuzz = (
+  effect = {
+    useCountEffect,
+  }
+) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  effect.useCountEffect(state.count);
 
   return {
     domain: {
@@ -24,4 +32,11 @@ export const useFizzBuzz = () => {
   };
 };
 
-export type Props = ReturnType<typeof useFizzBuzz>;
+export const useCountEffect = (count: State["count"]) => {
+  const { operations } = useOperations();
+  useEffect(() => {
+    console.log("b", count);
+
+    operations.recalculate(count);
+  }, [operations, count]);
+};
