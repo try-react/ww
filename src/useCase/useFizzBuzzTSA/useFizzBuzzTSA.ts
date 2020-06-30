@@ -14,7 +14,8 @@ export const useFizzBuzzTSA = (
   const [state, dispatch] = useReducer(reducer, initialState);
 
   effect.useCountEffect(
-    state.count - (usePrevious<State["count"]>(state.count) || 0)
+    state.count -
+      (usePrevious<State["count"]>(state.count) || initialState.count)
   );
 
   return {
