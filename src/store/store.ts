@@ -1,13 +1,18 @@
-import { configureStore } from "@reduxjs/toolkit";
-import * as fizzBuzz from "./fizzBuzz/module";
-import { ActionType } from "typesafe-actions";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import type { Actions } from "./fizzBuzz/actions";
+import * as fizzBuzz from "./fizzBuzz/reducer";
+import logger from "redux-logger";
+
+const middleware = [...getDefaultMiddleware(), logger];
 
 export const store = configureStore({
   reducer: {
     fizzBuzz: fizzBuzz.reducer,
   },
+  middleware,
+  devTools: process.env.NODE_ENV !== "production",
 });
 
 type Store = typeof store;
 export type RootState = ReturnType<Store["getState"]>;
-export type RootAction = ActionType<typeof fizzBuzz["actions"]>;
+export type RootAction = Actions;

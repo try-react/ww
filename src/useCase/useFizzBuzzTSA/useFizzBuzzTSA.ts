@@ -2,9 +2,20 @@ import { useReducer } from "react";
 import { reducer, initialState, actions } from "./module";
 import { Props } from "~/useCase/useFizzBuzz";
 import * as fizzBuzz from "~/domain/fizzBuzz";
+import { usePrevious } from "react-use";
+import type { State } from "./module";
+import { useCountEffect } from "~/store/fizzBuzz/useFizzBuzz";
 
-export const useFizzBuzzTSA = (): Props => {
+export const useFizzBuzzTSA = (
+  effect = {
+    useCountEffect,
+  }
+): Props => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  effect.useCountEffect(
+    state.count - (usePrevious<State["count"]>(state.count) || 0)
+  );
 
   return {
     domain: {

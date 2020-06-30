@@ -1,12 +1,11 @@
 import React, { FC } from "react";
-import { useSelectors } from "~/store/fizzBuzz/useFizzBuzz";
+import type { Props } from "~/useCase/useFizzBuzzAggregate";
 
-export const FizzBuzzAggregate: FC = () => {
-  const { selectors } = useSelectors();
-  return (
-    <ul>
-      <li>カウント: {selectors.fizzBuzz.count}</li>
-      <li>ラベル: {selectors.fizzBuzz.label}</li>
-    </ul>
-  );
-};
+export const FizzBuzzAggregate: FC<Props> = (props) => (
+  <ul>
+    <li>カウント: {props.selectors.fizzBuzz.count}</li>
+    <li>
+      {props.ui.isFizzBuzz ? props.selectors.fizzBuzz.label + "🍣" : "❌"}
+    </li>
+  </ul>
+);

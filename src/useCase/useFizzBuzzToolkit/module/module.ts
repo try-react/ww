@@ -1,7 +1,7 @@
 import { ReadonlyDeep } from "type-fest";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 import { Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
-import { createSlice, createAction } from "@reduxjs/toolkit";
+import { createReducer, createAction } from "@reduxjs/toolkit";
 
 export type State = ReadonlyDeep<{
   count: Count;
@@ -18,23 +18,20 @@ export const actions = {
 
 export type Actions = ReturnType<typeof actions[keyof typeof actions]>;
 
-export const { reducer } = createSlice({
-  name: "fizzBuzzToolkit",
-  initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(actions.increment, (state, action) =>
+export const reducer = createReducer(initialState, (builder) =>
+  builder
+    .addCase(actions.increment, (state, action) =>
       fizzBuzz.factory.increment({
         count: state.count,
         inputValue: action.payload.count,
       })
-    );
-    builder.addCase(actions.decrement, (state, action) =>
+    )
+    .addCase(actions.decrement, (state, action) =>
       fizzBuzz.factory.decrement({
         count: state.count,
         inputValue: action.payload.count,
       })
-    );
-    builder.addCase(actions.reset, fizzBuzz.factory.reset);
-  },
-});
+    )
+    .addCase(actions.reset, fizzBuzz.factory.reset)
+    .addDefaultCase(fizzBuzz.factory.reset)
+);

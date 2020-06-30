@@ -1,12 +1,15 @@
 import React from "react";
 import { NextPage } from "next";
 import { FizzBuzz } from "~/ui/components/FizzBuzz";
-import { FizzBuzzAggregate } from "~/ui/components/FizzBuzzAggregate";
+import { FizzBuzzAggregate as FizzBuzzAggregateComponent } from "~/ui/components/FizzBuzzAggregate";
 import { fizzBuzz } from "~/controller/fizzBuzz";
 
 const FizzBuzzTSOnly = () => <FizzBuzz {...fizzBuzz.useTSOnly()} />;
 const FizzBuzzTSA = () => <FizzBuzz {...fizzBuzz.useTSA()} />;
 const FizzBuzzToolkit = () => <FizzBuzz {...fizzBuzz.useToolkit()} />;
+const FizzBuzzAggregate = () => (
+  <FizzBuzzAggregateComponent {...fizzBuzz.useAggregate()} />
+);
 
 const Component: NextPage = () => (
   <>

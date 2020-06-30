@@ -1,8 +1,9 @@
-import { useReducer, useEffect } from "react";
+import { useReducer } from "react";
 import { reducer, initialState, actions } from "./module";
 import type { State } from "./module";
 import * as fizzBuzz from "~/domain/fizzBuzz";
-import { useOperations } from "~/store/fizzBuzz/useFizzBuzz";
+import { useCountEffect } from "~/store/fizzBuzz/useFizzBuzz";
+import { usePrevious } from "react-use";
 
 export type Props = ReturnType<typeof useFizzBuzz>;
 export const useFizzBuzz = (
@@ -11,7 +12,10 @@ export const useFizzBuzz = (
   }
 ) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  effect.useCountEffect(state.count);
+
+  effect.useCountEffect(
+    state.count - (usePrevious<State["count"]>(state.count) || 0)
+  );
 
   return {
     domain: {
@@ -30,13 +34,4 @@ export const useFizzBuzz = (
       reset: () => dispatch(actions.reset()),
     },
   };
-};
-
-export const useCountEffect = (count: State["count"]) => {
-  const { operations } = useOperations();
-  useEffect(() => {
-    console.log("b", count);
-
-    operations.recalculate(count);
-  }, [operations, count]);
 };
