@@ -12,7 +12,10 @@ const FizzBuzzAggregate = () => (
 );
 
 const Component: NextPage = () => (
-  <>
+  <div style={{ marginLeft: "auto", marginRight: "auto", width: 1200 }}>
+    <h2>FizzBuzz (カウントの全体合計でfizz-buzz)</h2>
+    <FizzBuzzAggregate />
+    <hr />
     <h2>FIzzBuzz (ライブラリ未使用版)</h2>
     <FizzBuzzTSOnly />
     <hr />
@@ -21,9 +24,6 @@ const Component: NextPage = () => (
     <hr />
     <h2>FIzzBuzz (@reduxjs/toolkit版)</h2>
     <FizzBuzzToolkit />
-    <hr />
-    <h2>FizzBuzz (上記カウントの合計)</h2>
-    <FizzBuzzAggregate />
-  </>
+  </div>
 );
 export default Component;

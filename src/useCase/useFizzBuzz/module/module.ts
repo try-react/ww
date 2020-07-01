@@ -2,7 +2,7 @@ import { ReadonlyDeep } from "type-fest";
 import * as fizzBuzz from "~/domain/fizzBuzz";
 import { Count, FizzBuzzLabel } from "~/domain/fizzBuzz";
 
-export type State = ReadonlyDeep<{
+type State = ReadonlyDeep<{
   count: Count;
   label: FizzBuzzLabel;
 }>;
