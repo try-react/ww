@@ -3,14 +3,15 @@ import type { Actions } from "./fizzBuzz/actions";
 import * as fizzBuzz from "./fizzBuzz/reducer";
 import logger from "redux-logger";
 
-const middleware = [...getDefaultMiddleware(), logger];
+const middleware = [...getDefaultMiddleware()];
+process.env.NODE_ENV === "development" && middleware.push(logger);
 
 export const store = configureStore({
   reducer: {
     fizzBuzz: fizzBuzz.reducer,
   },
   middleware,
-  devTools: process.env.NODE_ENV !== "production",
+  devTools: process.env.NODE_ENV === "development",
 });
 
 type Store = typeof store;

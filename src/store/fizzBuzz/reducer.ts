@@ -22,4 +22,5 @@ export const reducer = createReducer(initialState, (builder) =>
      * `typeGuard.isRecalculate`は、A | B | C ぐらいのざっくりしたマッチが良い
      */
     .addMatcher(typeGuard.isRecalculate, (state, _action) => state)
+    .addDefaultCase(fizzBuzz.factory.reset)
 );

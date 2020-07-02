@@ -11,9 +11,9 @@ export type State = ReadonlyDeep<{
 export const initialState: State = fizzBuzz.factory.reset();
 
 export const actions = {
-  increment: createAction("increment")<{ count: Count }>(),
-  decrement: createAction("decrement")<{ count: Count }>(),
-  reset: createAction("reset")(),
+  increment: createAction("FizzBuzzTSA/increment")<{ count: Count }>(),
+  decrement: createAction("FizzBuzzTSA/decrement")<{ count: Count }>(),
+  reset: createAction("FizzBuzzTSA/reset")(),
 } as const;
 type Actions = ActionType<typeof actions>;
 
