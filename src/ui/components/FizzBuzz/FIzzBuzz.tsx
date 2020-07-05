@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Props } from "~/useCase/useFizzBuzz";
+import { Props } from "~/useCase/useFizzBuzz/useFizzBuzzState";
 import { CountButton } from "../_common/Button/CountButton";
 
 export const FizzBuzz: FC<Props> = (props) => (
