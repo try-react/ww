@@ -1,8 +1,7 @@
-import { reducer, initialState, actions, useReducer } from "./module";
+import { initialState, actions, reducer } from "./module";
 import type { Props } from "~/useCase/useFizzBuzz/useFizzBuzzState";
 import * as fizzBuzz from "~/domain/fizzBuzz";
-
-const sleep = () => new Promise((resolve) => setTimeout(resolve, 2000));
+import { useReducer } from "react";
 
 export const useFizzBuzzTSAState = (): Props => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -17,7 +16,8 @@ export const useFizzBuzzTSAState = (): Props => {
       isInitCount: state.count === initialState.count,
     },
     operations: {
-      increment: () => dispatch(actions.increment.request(null, sleep)),
+      increment: () =>
+        dispatch(actions.increment({ count: fizzBuzz.definedVO.adjust })),
       decrement: () =>
         dispatch(actions.decrement({ count: fizzBuzz.definedVO.adjust })),
       reset: () => dispatch(actions.reset()),
