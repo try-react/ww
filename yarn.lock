@@ -2979,7 +2979,7 @@ commander@4.1.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
 
-commander@^2.11.0, commander@^2.19.0, commander@^2.20.0, commander@~2.20.3:
+commander@^2.11.0, commander@^2.19.0, commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -9507,11 +9507,9 @@ typescript@3.9.6:
   integrity sha512-Pspx3oKAPJtjNwE92YS05HQoY7z2SFyOpHo9MqJor3BXAGNaPUs83CuVp9VISFkSjyRfiTpmKuAYGJB7S7hOxw==
 
 uglify-js@^3.1.4:
-  version "3.9.3"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.9.3.tgz#4a285d1658b8a2ebaef9e51366b3a0f7acd79ec2"
-  integrity sha512-r5ImcL6QyzQGVimQoov3aL2ZScywrOgBXGndbWrdehKoSvGe/RmiE5Jpw/v+GvxODt6l2tpBXwA7n+qZVlHBMA==
-  dependencies:
-    commander "~2.20.3"
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.10.2.tgz#8cfa1209fd04199cc8a7f9930ddedb30b0f1912d"
+  integrity sha512-GXCYNwqoo0MbLARghYjxVBxDCnU0tLqN7IPLdHHbibCb1NI5zBkU2EPcy/GaVxc0BtTjqyGXJCINe6JMR2Dpow==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
