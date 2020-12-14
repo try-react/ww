@@ -6948,9 +6948,9 @@ node-fetch@2.6.1:
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-html-parser@^1.2.19:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/node-html-parser/-/node-html-parser-1.4.5.tgz#0697045ccaf4e5f8f99b78d0a5579d096b7da6d2"
-  integrity sha512-sNm4Tdc8zj5HnFtkNEcK/1tpvyfRxEuz1d4rkVceGPeMTfzd2twPTiEo/UbqxOexSt9AzJ/cvQXSTj7fa6Ey1w==
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/node-html-parser/-/node-html-parser-1.4.9.tgz#3c8f6cac46479fae5800725edb532e9ae8fd816c"
+  integrity sha512-UVcirFD1Bn0O+TSmloHeHqZZCxHjvtIeGdVdGMhyZ8/PWlEiZaZ5iJzR189yKZr8p0FXN58BUeC7RHRkf/KYGw==
   dependencies:
     he "1.2.0"
 
