@@ -18,7 +18,7 @@
     "@cybozu/eslint-config": "10.0.4",
     "@reduxjs/toolkit": "1.4.0",
     "@testing-library/react": "11.2.2",
-    "@testing-library/react-hooks": "3.4.1",
+    "@testing-library/react-hooks": "3.7.0",
     "@types/jest": "26.0.10",
     "babel-plugin-react-remove-properties": "0.3.0",
     "core-js": "3",
