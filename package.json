@@ -19,7 +19,7 @@
     "@reduxjs/toolkit": "1.4.0",
     "@testing-library/react": "11.2.2",
     "@testing-library/react-hooks": "3.7.0",
-    "@types/jest": "26.0.10",
+    "@types/jest": "26.0.20",
     "babel-plugin-react-remove-properties": "0.3.0",
     "core-js": "3",
     "eslint-plugin-jest": "24.1.3",
