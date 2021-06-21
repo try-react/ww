@@ -34,7 +34,7 @@
     "typescript": "3.9.9"
   },
   "devDependencies": {
-    "@types/node": "15.12.1",
+    "@types/node": "15.12.4",
     "@types/react": "17.0.0",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
